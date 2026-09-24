@@ -293,6 +293,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get touristGuides => 'Tourist Guides';
 
   @override
+  String get tangaRides => 'Tanga Rides';
+
+  @override
   String get searchHotels => 'Search hotels by name or location...';
 
   @override
@@ -303,6 +306,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get searchGuides => 'Search guides by name or language...';
+
+  @override
+  String get searchTanga => 'Search tanga rides by provider...';
 
   @override
   String get googleMaps => 'Google Maps';

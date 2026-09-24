@@ -17,6 +17,7 @@ class LocalPlacesRepository implements PlacesRepository {
         'assets/images/explore/golgumbaz_in_tri_color.jpg',
         'assets/images/explore/dsc_0997.jpg',
         'assets/images/monuments/gol_gumbaz.jpg',
+        'assets/images/explore/01_Golgumbaz_Vijayapura.png',
       ],
       imageCaptions: {
         'assets/images/explore/golgumbaz_2_by_ramesh_chavan.jpg': 'Gol Gumbaz',
@@ -55,7 +56,7 @@ class LocalPlacesRepository implements PlacesRepository {
         'Hotel Kanishka International',
         'Shashinag Residency',
       ],
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.83019944264078,75.73578986420485',
+      mapsUrl: 'https://maps.google.com/?cid=15664829629228524966&utm_source=gemini&authuser=1',
       bookingUrl: 'https://asi.paygov.org.in',
       touristFootfall: 'Annually around 10 lakhs visitors',
       village: 'Vijayapura City',
@@ -75,6 +76,7 @@ class LocalPlacesRepository implements PlacesRepository {
         'assets/images/explore/ibrahim_rouza_by_mashood.jpg',
         'assets/images/explore/ibrahim_rouza_1.jpg',
         'assets/images/monuments/ibrahim_rauza.jpg',
+        'assets/images/explore/02_Ibrahim_Rouza_Vijayapura.png',
       ],
       imageCaptions: {
         'assets/images/explore/ibrahim_rouza_1_by_ramesh_chavan.jpg':
@@ -93,7 +95,7 @@ class LocalPlacesRepository implements PlacesRepository {
       ),
       openingTime: '06:00 AM',
       closingTime: '05:40 PM',
-      visitingTimings: 'Morning 6 AM IST to Evening 6 PM IST',
+      visitingTimings: '06:00 AM – 05:40 PM',
       gateClosingTime: '05:30 PM',
       ticketPriceInfo: '₹20 (Online / Entry Charge)',
       suggestedDuration: '1 - 1.5 Hours',
@@ -106,7 +108,8 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Taj Bawdi', 'Malik-e-Maidan', 'Sangit Mahal'],
       nearbyFoodRecommendations: ['Sigdi Restaurant', 'Garden View Cafe'],
       nearbyAccommodationRecommendations: ['The Fern Residency Vijayapura'],
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.827218927870497,75.70210842852073',
+      mapsUrl: 'https://maps.google.com/?cid=765027159616443248&utm_source=gemini&authuser=1',
+      bookingUrl: 'https://asi.paygov.org.in',
       touristFootfall: 'Annually around 8 lakhs visitors',
       village: 'Vijayapura City',
       taluka: 'Vijayapura',
@@ -152,8 +155,7 @@ class LocalPlacesRepository implements PlacesRepository {
         'Hotel Pleasant Stay',
         'Hotel Central',
       ],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8290,75.7140',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJw7ZYPX9VxjsRFkxnoKxJgrg&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -171,6 +173,9 @@ class LocalPlacesRepository implements PlacesRepository {
         'assets/images/explore/basavan_bagewadi_1.jpg',
         'assets/images/explore/basava_janmastala_ingaleshwar.jpg',
         'assets/images/monuments/basavana_bagewadi.jpg',
+        'assets/images/explore/13_Shri_Basaveshwar_Temple_Basavan_Bagewadi_Memorial_Building.jpeg',
+        'assets/images/explore/13_Shri_Basaveshwar_Temple_Basavan_Bagewadi_Illuminated_Night_View.jpeg',
+        'assets/images/explore/13_Shri_Basaveshwar_Temple_Basavan_Bagewadi_Silver_Nandi.png',
       ],
       locationName: 'Shri Basaveshwar Temple, Basavan Bagewadi Town, Tq: Basavan Bagewadi, Dist: Vijayapura',
       coordinates: GeoCoordinates(
@@ -196,7 +201,7 @@ class LocalPlacesRepository implements PlacesRepository {
         'Basava Pilgrims Guest House',
         'Hotel Basava Residency',
       ],
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.57415245941341,75.97824771190498',
+      mapsUrl: 'https://maps.google.com/?cid=18233490325906104041&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 3,75,000 to 5,00,000 visitors',
       village: 'Basavan Bagewadi',
       taluka: 'Basavan Bagewadi',
@@ -225,8 +230,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Upali Burj', 'Ibrahim Rauza'],
       nearbyFoodRecommendations: ['Heritage Cafe', 'North Karnataka Meals'],
       nearbyAccommodationRecommendations: ['Hotel Pearl'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8286,75.7042',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJc6Xr4oH_xjsRX1lbdWb_-Rw&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -250,8 +254,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Mehtar Mahal', 'Asar Mahal'],
       nearbyFoodRecommendations: ['Old City Biryani Center', 'Bawarchi Corner'],
       nearbyAccommodationRecommendations: ['Hotel Kanishka'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8251,75.7229',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJ1fq10HFVxjsR_hnpELBdgAw&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -275,8 +278,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Ibrahim Rauza', 'Chand Bawdi'],
       nearbyFoodRecommendations: ['Taj Snacks & Sweets'],
       nearbyAccommodationRecommendations: ['The Fern Residency'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8240,75.7031',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJ3SZ87Yb_xjsRGSNZknjCaGc&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -290,6 +292,8 @@ class LocalPlacesRepository implements PlacesRepository {
         'assets/images/explore/shivagiri.jpg',
         'assets/images/explore/shivagiri_3.jpg',
         'assets/images/explore/shivagiri_5.jpg',
+        'assets/images/explore/29_Shivagiri_Vijayapura_Giant_85ft_Shiva_Statue.png',
+        'assets/images/explore/29_Shivagiri_Vijayapura_Nandi_and_Shivalinga_Shrine.png',
       ],
       imageCaptions: {
         'assets/images/explore/shivagiri.jpg': 'Shiva Statue, Shivagiri',
@@ -315,7 +319,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Gol Gumbaz', 'Asar Mahal'],
       nearbyFoodRecommendations: ['Sindagi Road Dhaba', 'Hotel Annapurna'],
       nearbyAccommodationRecommendations: ['Hotel Kanishka International'],
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.81819714821562,75.75759791822054',
+      mapsUrl: 'https://maps.google.com/?cid=6090386833102337633&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 450,000 to 500,000 visitors',
       village: 'Vijayapura',
       taluka: 'Vijayapura',
@@ -356,8 +360,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Jama Masjid', 'Bara Kaman', 'Gagan Mahal'],
       nearbyFoodRecommendations: ['Old City Biryani Center'],
       nearbyAccommodationRecommendations: ['Hotel Central'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8288,75.7196',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJtYi0zHtVxjsROAN8Goqqd8o&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -395,8 +398,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Bara Kaman', 'Jal Mahal', 'Narasimha Temple'],
       nearbyFoodRecommendations: ['Kamath Refreshments'],
       nearbyAccommodationRecommendations: ['Hotel Pearl'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8299,75.7118',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJEWTaIXxVxjsReMUX8ZX3IYA&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -420,8 +422,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Gagan Mahal', 'Narasimha Temple', 'Bara Kaman'],
       nearbyFoodRecommendations: ['Basaveshwara Khanavali'],
       nearbyAccommodationRecommendations: ['Hotel Central'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8289,75.7135',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJh705OnxVxjsR28cyP3dvW4E&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -430,9 +431,9 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Temples & Shrines',
       shortDescription: 'Ancient underground stone shrine dedicated to Lord Narasimha within the citadel.',
       historicalOverview: 'Situated in the citadel area near the western ramparts, this ancient underground temple dedicated to Sri Narasimha dates back centuries and represents an enduring spiritual landmark through the medieval and modern eras of Vijayapura.',
-      imageUrl: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+      imageUrl: 'assets/images/explore/narasimha_temple.png',
       galleryUrls: [
-        'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+        'assets/images/explore/narasimha_temple.png',
       ],
       locationName: 'Citadel Western Ramparts, Vijayapura',
       coordinates: GeoCoordinates(latitude: 16.8295, longitude: 75.7125),
@@ -444,8 +445,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Gagan Mahal', 'Jal Mahal', 'Bara Kaman'],
       nearbyFoodRecommendations: ['Kamath Refreshments'],
       nearbyAccommodationRecommendations: ['Hotel Central'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8295,75.7125',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJZ88kt4H_xjsRBvP5K8l0Juc&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -454,10 +454,12 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Mausoleums',
       shortDescription: 'Graceful paired twin-domed mausoleums situated upon an elevated stone plinth.',
       historicalOverview: 'Constructed around 1687 near Mecca Gate, Jod Gumbaz (meaning Twin Domes or Do Gumbaz) contains the tombs of Khan Muhammad and Abdul Razzaq Qadiri. Raised upon an expansive platform, both domes exhibit symmetrical Adil Shahi bulbous dome styling and decorative parapet merlons.',
-      imageUrl: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80',
-      galleryUrls: [
-        'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80',
-      ],
+      imageUrl: 'assets/images/explore/jod_gumbaz.png',
+      galleryUrls: ['assets/images/explore/jod_gumbaz.png'],
+      imageCaptions: {
+        'assets/images/explore/jod_gumbaz.png':
+            'Jod Gumbaz (Do Gumbaz) Twin-Domed Mausoleum',
+      },
       locationName: 'Mecca Gate Road, Vijayapura',
       coordinates: GeoCoordinates(latitude: 16.8273, longitude: 75.7011),
       openingTime: '06:00 AM',
@@ -468,8 +470,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Taj Bawdi', 'Ibrahim Rauza'],
       nearbyFoodRecommendations: ['Taj Snacks & Sweets'],
       nearbyAccommodationRecommendations: ['The Fern Residency'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8273,75.7011',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJTWzfPof_xjsRoHLGyNDAqEE&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -478,10 +479,8 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Mosques & Palaces',
       shortDescription: 'Royal palace of music and performing arts built by Ibrahim Adil Shah II at Navraspur.',
       historicalOverview: 'Founded around 1599 by Sultan Ibrahim Adil Shah II—celebrated patron of arts and author of the classical treatise Kitab-e-Navras—Sangeet Mahal was the jewel of the royal cultural suburb of Navraspur. The surviving ruins reveal dramatic multi-tiered arches, a central courtyard, and historic step basins.',
-      imageUrl: 'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=1200&q=80',
-      galleryUrls: [
-        'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=800&q=80',
-      ],
+      imageUrl: 'assets/images/explore/04_Sangeeth_Mahal_Toravi.png',
+      galleryUrls: ['assets/images/explore/04_Sangeeth_Mahal_Toravi.png'],
       locationName:
           'Sangeeth Mahal, Athani Road, Vijayapura, Karnataka state -586109',
       coordinates: GeoCoordinates(
@@ -496,7 +495,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Torvi Narasimha Temple', 'Ibrahim Rauza'],
       nearbyFoodRecommendations: ['Torvi Rural Canteen', 'Sigdi Restaurant'],
       nearbyAccommodationRecommendations: ['The Fern Residency'],
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.82783921481459,75.6586552682683',
+      mapsUrl: 'https://maps.google.com/?cid=13290580452495542574&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 01 lakh to 1.50 Lakh visitors',
       village: 'Toravi',
       taluka: 'Tikota',
@@ -509,9 +508,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Temples & Shrines',
       shortDescription: 'Historic subterranean rock shrine where poet Kumara Valmiki composed the Torave Ramayana.',
       historicalOverview: 'Located in Torvi village roughly 6 km west of Vijayapura, this subterranean rock-carved shrine dedicated to Sri Lakshmi Narasimha is renowned in Kannada literary history as the sanctum where 16th-century saint-poet Kumara Valmiki composed the celebrated Kannada classic Torave Ramayana.',
-      imageUrl: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+      imageUrl:
+          'assets/images/explore/03_Shri_Narasimha_Temple_Toravi_Entrance.jpeg',
       galleryUrls: [
-        'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+        'assets/images/explore/03_Shri_Narasimha_Temple_Toravi_Entrance.jpeg',
+        'assets/images/explore/03_Shri_Narasimha_Temple_Toravi_Deity_Idol.jpeg',
       ],
       locationName: 'Shree Laxmi Narasimha Temple, Village: Toravi, Taluka & Dist: Vijayapura, Karnataka – 586 108',
       coordinates: GeoCoordinates(
@@ -526,7 +527,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Sangeet Mahal', 'Ibrahim Rauza'],
       nearbyFoodRecommendations: ['Torvi Village Refreshments'],
       nearbyAccommodationRecommendations: ['The Fern Residency'],
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.82944685191196,75.65663415505402',
+      mapsUrl: 'https://maps.google.com/?cid=7147959412711274199&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 1.50 lakhs visitors',
       village: 'Toravi',
       taluka: 'Tikota',
@@ -558,8 +559,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Malik-e-Maidan', 'Taj Bawdi'],
       nearbyFoodRecommendations: ['Heritage Cafe'],
       nearbyAccommodationRecommendations: ['Hotel Pearl'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8315,75.7029',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJr--Xj3__xjsRoJgLu5WR9pw&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -583,8 +583,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Jama Masjid', 'Asar Mahal', 'Bara Kaman'],
       nearbyFoodRecommendations: ['Old City Biryani Center', 'Bawarchi Corner'],
       nearbyAccommodationRecommendations: ['Hotel Kanishka International'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8258,75.7208',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJyaMZGXtVxjsRhq01fpXVdnM&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -603,6 +602,9 @@ class LocalPlacesRepository implements PlacesRepository {
         'assets/images/explore/almatti_musical_laser_show_entrance_plaza.jpg',
         'assets/images/explore/almatti_rock_garden_entrance.jpg',
         'assets/images/explore/almatti_rockgarden_3.png',
+        'assets/images/explore/14_Almatti_Lal_Bahadur_Shastri_Dam_Spillway_Gates.jpeg',
+        'assets/images/explore/14_Almatti_Dam_Mughal_Garden_India_Map.jpeg',
+        'assets/images/explore/14_Almatti_Dam_Entrance_Plaza_Night_View.png',
       ],
       imageCaptions: {
         'assets/images/explore/almatti_dam_site_view_1.jpg':
@@ -638,7 +640,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAccommodationRecommendations: [
         'KSTDC Hotel Mayura Krishna Almatti',
       ],
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.331412429711627,75.88670938615594',
+      mapsUrl: 'https://maps.google.com/?cid=16071296904609239846&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 5,75,000 to 6,50,000 visitors',
       village: 'Alamatti',
       taluka: 'Nidagundi',
@@ -670,33 +672,7 @@ class LocalPlacesRepository implements PlacesRepository {
         'Station Road Irani Tea',
       ],
       nearbyAccommodationRecommendations: ['Hotel Kanishka International'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8308,75.7352',
-    ),
-
-    Place(
-      id: 'navraspur_ainapur_mosque',
-      name: 'Navraspur / Ainapur Mosque',
-      category: 'Mosques & Palaces',
-      shortDescription:
-          'Adil Shahi stone mosque with graceful arches and vaulted bays.',
-      historicalOverview: 'Constructed during the high Adil Shahi period, this stone mosque served the thriving satellite royal township of Navraspur/Ainapur. It features refined Deccan stonework, geometric arches, and ornamental bracket mouldings.',
-      imageUrl: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80',
-      galleryUrls: [
-        'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80',
-      ],
-      locationName: 'Ainapur / Navraspur Corridor',
-      coordinates: GeoCoordinates(latitude: 16.8242, longitude: 75.7582),
-      openingTime: '06:00 AM',
-      closingTime: '06:30 PM',
-      gateClosingTime: null,
-      ticketPriceInfo: 'Free Entry',
-      suggestedDuration: '30 Minutes',
-      nearbyAttractionNames: ['Ainapur Tomb', 'Jahan Begum Tomb'],
-      nearbyFoodRecommendations: ['Ainapur Local Tea Stall'],
-      nearbyAccommodationRecommendations: ['Hotel Kanishka International'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8242,75.7582',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJtwDZvHRVxjsR5LmwCkZlSXk&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -705,10 +681,8 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Mausoleums',
       shortDescription: 'Grand domed mausoleum of nobleman Ain-ul-Mulk with impressive pyramidal roof structure.',
       historicalOverview: 'Located in Ainapur on the eastern fringe of Vijayapura, this massive mausoleum was erected for Ain-ul-Mulk, a prominent military nobleman of the Adil Shahi kingdom. The tomb is distinctive for its solid square base, attached prayer hall, and early Deccan Islamic stonework.',
-      imageUrl: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80',
-      galleryUrls: [
-        'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80',
-      ],
+      imageUrl: 'assets/images/explore/ainapur_tomb.png',
+      galleryUrls: ['assets/images/explore/ainapur_tomb.png'],
       locationName: 'Ainapur Village, East Vijayapura',
       coordinates: GeoCoordinates(latitude: 16.8235, longitude: 75.7601),
       openingTime: '08:00 AM',
@@ -716,11 +690,10 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      nearbyAttractionNames: ['Jahan Begum Tomb', 'Navraspur Mosque'],
+      nearbyAttractionNames: ['Jahan Begum Tomb'],
       nearbyFoodRecommendations: ['Sindagi Road Dhaba'],
       nearbyAccommodationRecommendations: ['Hotel Kanishka International'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8235,75.7601',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJr5PYWRFVxjsRP6nj9JTnnyw&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -729,10 +702,8 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Mausoleums',
       shortDescription: 'Monumental octagonal tomb of Mohammed Adil Shah\'s royal consort Jahan Begum.',
       historicalOverview: 'Constructed at Ainapur for Jahan Begum, royal wife of Mohammed Adil Shah, this grand mausoleum was designed on a scale echoing Gol Gumbaz. Though its central dome remained incomplete, the monument displays expansive arched facades and exquisite brick-and-mortar masonry.',
-      imageUrl: 'https://images.unsplash.com/photo-1590076215667-875d4ef2d7ee?auto=format&fit=crop&w=1200&q=80',
-      galleryUrls: [
-        'https://images.unsplash.com/photo-1590076215667-875d4ef2d7ee?auto=format&fit=crop&w=800&q=80',
-      ],
+      imageUrl: 'assets/images/explore/jahan_begum_tomb.png',
+      galleryUrls: ['assets/images/explore/jahan_begum_tomb.png'],
       locationName: 'Ainapur, Vijayapura Outskirts',
       coordinates: GeoCoordinates(latitude: 16.8219, longitude: 75.7595),
       openingTime: '08:00 AM',
@@ -743,8 +714,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Ainapur Tomb', 'Kumatagi'],
       nearbyFoodRecommendations: ['Sindagi Road Dhaba'],
       nearbyAccommodationRecommendations: ['Hotel Kanishka International'],
-      mapsUrl:
-          'https://www.google.com/maps/search/?api=1&query=16.8219,75.7595',
+      mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJk6jIqvFUxjsREtR2c0XyzaQ&utm_source=gemini&authuser=1',
     ),
 
     Place(
@@ -761,6 +731,8 @@ class LocalPlacesRepository implements PlacesRepository {
         'assets/images/explore/kumatagi_summer_palace_3.jpg',
         'assets/images/explore/kumatagi_summer_palace_4.jpg',
         'assets/images/explore/kumatagi_summer_palace_5.jpg',
+        'assets/images/explore/09_Summer_Palace_Jal_Mahal_Kumatagi_Water_Pavilion.jpeg',
+        'assets/images/explore/09_Summer_Palace_Kumatagi_Top_View.jpeg',
       ],
       locationName: 'Kumatagi Village, Tq: Vijayapura, Dist: Vijayapura',
       coordinates: GeoCoordinates(
@@ -775,7 +747,7 @@ class LocalPlacesRepository implements PlacesRepository {
       nearbyAttractionNames: ['Ainapur Tomb', 'Jahan Begum Tomb'],
       nearbyFoodRecommendations: ['Kumatagi Village Refreshments'],
       nearbyAccommodationRecommendations: ['Hotel Kanishka International'],
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.818423237079685,75.89608051800187',
+      mapsUrl: 'https://maps.google.com/?cid=16216712974361133094&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 25,000 to 30,000 visitors',
       village: 'Kumatagi',
       taluka: 'Vijayapura',
@@ -787,8 +759,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Ancient Temple',
       shortDescription: 'Attractive Chalukyan-style temple dedicated to Lord Dattatreya at the ancient Agrahara Chatturage.',
       historicalOverview: 'Chattaraki, historically referred to in ancient stone inscriptions as Agrahara Chatturage, was an esteemed centre of learning and spirituality during the Kalyana Chalukya period. The Shri Dattatreya Temple is an attractive heritage structure constructed in the classic Chalukyan architectural style upon a raised adhishtana (plinth). The temple complex features a sacred garbhagriha (sanctum sanctorum), an ardha mantapa, a spacious navaranga supported by ornate stone pillars, and an independent mukhamantapa. Pilgrims and cultural travelers visit to venerate Lord Dattatreya and admire the historic Chalukyan stone craftsmanship.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/25_Shri_Dattatreya_Temple_Chattaraki_Chalukyan_Entrance_Steps.jpeg',
+      galleryUrls: [
+        'assets/images/explore/25_Shri_Dattatreya_Temple_Chattaraki_Chalukyan_Entrance_Steps.jpeg',
+        'assets/images/explore/25_Shri_Dattatreya_Temple_Chattaraki_Side_Stone_Carvings.jpg',
+      ],
       locationName: 'Shri Dattatreya Temple – Chattaraki village, Tq: Sindagi, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.940651580018084,
@@ -799,7 +774,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '45 - 60 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.940651580018084,76.06348921930643',
+      mapsUrl: 'https://maps.google.com/?cid=14984040426479515462&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 25,000 to 50,000 visitors.',
       village: 'Chattaraki',
       taluka: 'Sindagi',
@@ -811,8 +786,12 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Ancient heritage temple dedicated to Goddess Lakshmi located along Athani Road in historical Toravi.',
       historicalOverview: 'Toravi is an ancient and historical village located roughly four miles west of Vijayapura on Athani Road. The Shri Lakshmi Temple is a revered heritage temple dedicated to Goddess Lakshmi, attracting thousands of devotees and pilgrims especially during annual festivals and special worship days. The sacred shrine represents the enduring spiritual heritage of the Toravi-Navraspur cultural landscape.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl:
+          'assets/images/explore/05_Shri_Lakshmi_Temple_Toravi_Premises.png',
+      galleryUrls: [
+        'assets/images/explore/05_Shri_Lakshmi_Temple_Toravi_Premises.png',
+        'assets/images/explore/05_Shri_Lakshmi_Temple_Toravi_Deity_Idol.png',
+      ],
       locationName: 'Shree Laxmi Temple, Athani road, Toravi, Tq: Tikota, Dist. Vijayapura, Karnataka – 586 108',
       coordinates: GeoCoordinates(
         latitude: 16.828165732879473,
@@ -823,7 +802,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.828165732879473,75.6549262319844',
+      mapsUrl: 'https://maps.google.com/?cid=8268891051525339118&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 1.50 to 2 lakhs visitors.',
       village: 'Toravi',
       taluka: 'Tikota',
@@ -835,8 +814,12 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Revered 12th-century heritage temple dedicated to Lord Dharidevar featuring a historic underground passage.',
       historicalOverview: 'Shri Daridevar Temple in Kanamadi is an ancient and highly revered 12th-century Hindu temple dedicated to Lord Dharidevar (also known as Daridev or Dareshwar). The temple is famous for its unique traditional underground passage, which is traditionally opened during the vibrant annual Jatra Mahotsava. Devotees from across Karnataka and neighboring Maharashtra gather here in large numbers for blessings, cultural festivities, and temple traditions.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl:
+          'assets/images/explore/06_Shri_Daridevar_Temple_Kanamadi_View_1.png',
+      galleryUrls: [
+        'assets/images/explore/06_Shri_Daridevar_Temple_Kanamadi_View_1.png',
+        'assets/images/explore/06_Shri_Daridevar_Temple_Kanamadi_Entrance_2.png',
+      ],
       locationName: 'Shree Daridevar Temple, Village: Kanamadi, Taluka: Tikota, Dist. Vijayapura, Karnataka – 586 108',
       coordinates: GeoCoordinates(
         latitude: 16.970373526451375,
@@ -847,7 +830,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '45 - 60 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.970373526451375,75.37499020163624',
+      mapsUrl: 'https://maps.google.com/?cid=8931246278899090325&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 02.50 lakh to 3.00 Lakh visitors.',
       village: 'Kanamadi',
       taluka: 'Tikota',
@@ -859,8 +842,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Revered Siddha pilgrimage centre on Mummata Gudda hill attracting hundreds of thousands of pilgrims.',
       historicalOverview: 'Perched on the scenic elevation of Mummata Gudda between Jalageri and Arakeri, the Shri Amoghsiddeshwar Temple is one of the most prominent pilgrimage centres in Vijayapura district. Dedicated to the revered Nath Panth saint Sri Amoghasiddha, the temple witnesses massive annual footfall, with half a million pilgrims visiting during auspicious fairs and festivities. The hill shrine offers a tranquil spiritual atmosphere and panoramic views of the surrounding countryside.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/07_Shri_Amoghsiddeshwar_Temple_Jalageri_Arakeri_Steps_Gopura.png',
+      galleryUrls: [
+        'assets/images/explore/07_Shri_Amoghsiddeshwar_Temple_Jalageri_Arakeri_Steps_Gopura.png',
+        'assets/images/explore/07_Shri_Amoghsiddeshwar_Temple_Jalageri_Arakeri_Sanctum.png',
+      ],
       locationName: 'Shree Amogh Siddeshwar Temple, Village: Jalageri (Mummata gudda - Arakeri), Taluka: Tikota, Dist. Vijayapura, Karnataka – 586 108',
       coordinates: GeoCoordinates(
         latitude: 16.92946471569725,
@@ -871,7 +857,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '1 - 1.5 Hours',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.92946471569725,75.6528626906452',
+      mapsUrl: 'https://maps.google.com/?cid=10693830643031657370&authuser=1',
       touristFootfall: 'Annually around 4.50 lakh to 5.00 Lakh visitors.',
       village: 'Jalageri - Arakeri Village',
       taluka: 'Tikota',
@@ -883,8 +869,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Historical temple dedicated to Goddess Saraswati (Vagdevi), revered as a sacred centre for wisdom and learning.',
       historicalOverview: 'Located in Dyaberi village in Vijayapura taluka, the Shri Vagdevi Temple is an ancient and esteemed spiritual landmark dedicated to Vagdevi (Goddess Saraswati, deity of learning, arts, and speech). Students, scholars, and devotees visit throughout the year to seek blessings for education, wisdom, and auspicious beginnings, making it a prominent cultural pilgrimage site.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/08_Shri_Vagdevi_Temple_Dyaberi_Temple_Exterior.png',
+      galleryUrls: [
+        'assets/images/explore/08_Shri_Vagdevi_Temple_Dyaberi_Temple_Exterior.png',
+        'assets/images/explore/08_Shri_Vagdevi_Temple_Dyaberi_Goddess_Idols.png',
+      ],
       locationName: 'Shree Vagdevi Temple, Village: Dyaberi, Taluka: Vijayapura, Dist. Vijayapura, Karnataka – 586 108',
       coordinates: GeoCoordinates(
         latitude: 16.888881111900062,
@@ -895,7 +884,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.888881111900062,75.84106724338741',
+      mapsUrl: 'https://maps.google.com/?cid=16277174954436793810&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 3.50 lakh to 4.00 Lakh visitors.',
       village: 'Dyaberi',
       taluka: 'Vijayapura',
@@ -907,8 +896,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Serene temple dedicated to Lord Sangamanatha situated amidst agricultural landscapes in Babaleshwar taluka.',
       historicalOverview: 'Situated in Uppaladinni village within Babaleshwar taluka, Shri Sangamanath Temple is an important local religious shrine dedicated to Lord Sangamanatha (Shiva). The temple serves as a focal point of religious devotion for the surrounding rural communities, hosting regular poojas, bhajans, and festive gatherings during Shravana and Maha Shivaratri.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/10_Shri_Sangamanath_Temple_Uppaladinni_Entrance_Gopuram.jpg',
+      galleryUrls: [
+        'assets/images/explore/10_Shri_Sangamanath_Temple_Uppaladinni_Entrance_Gopuram.jpg',
+        'assets/images/explore/10_Shri_Sangamanath_Temple_Uppaladinni_Sanctum_Front.jpeg',
+      ],
       locationName: 'Shri Sangamanath Temple, Uppaladinni Village, Tq: Babaleshwar, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.513991611767487,
@@ -919,7 +911,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.513991611767487,75.62364203436736',
+      mapsUrl: 'https://maps.google.com/?cid=836813707688087148&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 55,000 to 80,000 visitors.',
       village: 'Uppaladinni',
       taluka: 'Babaleshwar',
@@ -931,8 +923,12 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Historic shrine commemorating the 12th-century Sharanas Haralayya and Kalyanamma of the Sharana revolution.',
       historicalOverview: 'Located in Shegunashi village in Babaleshwar taluka, this temple honours the memory of the revered 12th-century Sharana saint Haralayya, a key associate of Jagajyothi Basaveshwara during the Bhakti and Vachana movement. The temple preserves the egalitarian philosophy of the Sharanas and attracts spiritual seekers and community pilgrims.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/11_Shri_Haralayana_Gunda_Temple_Shegunashi_Shrine.png',
+      galleryUrls: [
+        'assets/images/explore/11_Shri_Haralayana_Gunda_Temple_Shegunashi_Shrine.png',
+        'assets/images/explore/11_Shri_Haralayana_Gunda_Shegunashi_Holy_Kalyani_Pond.png',
+        'assets/images/explore/11_Shri_Haralayana_Temple_Shegunashi_Mantapa.png',
+      ],
       locationName: 'Shri Haralaya Temple, Shegunashi Village, Tq: Babaleshwar, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.59330214568919,
@@ -943,7 +939,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.59330214568919,75.60302943111655',
+      mapsUrl: 'https://maps.google.com/?cid=3013661245269977467&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 75,000 to 90,000 visitors.',
       village: 'Shegunashi',
       taluka: 'Babaleshwar',
@@ -955,8 +951,13 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Religious Site',
       shortDescription: 'Revered Sufi shrine in Tikota symbolizing communal harmony and spiritual fellowship.',
       historicalOverview: 'Situated in Tikota, the Hazimastan Darga is a cherished Sufi spiritual sanctuary dedicated to Hazrat Hazimastan. Visited by people of all religious faiths and backgrounds, the shrine exemplifies Deccan syncretic culture and peaceful coexistence. The annual Urs celebrations draw devotees from surrounding districts for communal prayers, Qawwalis, and blessings.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl:
+          'assets/images/explore/12_Hazimastan_Darga_Tikota_Front_View.png',
+      galleryUrls: [
+        'assets/images/explore/12_Hazimastan_Darga_Tikota_Front_View.png',
+        'assets/images/explore/12_Hazimastan_Darga_Tikota_Side_Angle.png',
+        'assets/images/explore/12_Hazimastan_Darga_Tikota_Holy_Kalyani_Pond.png',
+      ],
       locationName:
           'Hazimastan Darga, Tikota Town, Tq: Tikota, Dist: Vijayapura',
       coordinates: GeoCoordinates(
@@ -968,7 +969,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.834590805387567,75.52237702056529',
+      mapsUrl: 'https://maps.google.com/?cid=14495929788990016022&authuser=1',
       touristFootfall: 'Annually around 75,000 to 1,00,000 visitors.',
       village: 'Tikota',
       taluka: 'Tikota',
@@ -980,8 +981,12 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Religious Site',
       shortDescription: 'The sacred ancestral maternal birthplace of the 12th-century social reformer and philosopher Jagjyothi Basavanna.',
       historicalOverview: 'Ingaleshwar is revered as the sacred birthplace (Janmasthala) of Shri Jagjyothi Basavanna, the visionary 12th-century philosopher, social reformer, and founding spirit of the Sharana and Vachana movement. Situated near Basavan Bagewadi, the village features ancient stone temples, memorial halls, and archaeological remnants associated with Basavanna\'s childhood and family lineage. Lingayat pilgrims and heritage enthusiasts travel here from across the globe.',
-      imageUrl: 'assets/images/explore/basava_janmastala_ingaleshwar.jpg',
-      galleryUrls: ['assets/images/explore/basava_janmastala_ingaleshwar.jpg'],
+      imageUrl: 'assets/images/explore/15_Birthplace_of_Basavanna_Ingaleshwar_Temple_Exterior.png',
+      galleryUrls: [
+        'assets/images/explore/15_Birthplace_of_Basavanna_Ingaleshwar_Temple_Exterior.png',
+        'assets/images/explore/15_Madalambika_Tavaramane_Ingaleshwar_Basavamata_Heritage_House.png',
+        'assets/images/explore/basava_janmastala_ingaleshwar.jpg',
+      ],
       locationName: 'Shri Basava Janmasthala, Ingaleshwar Village, Tq: Basavan Bagewadi, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.6532583734245,
@@ -992,7 +997,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '1 - 1.5 Hours',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.6532583734245,76.01819691973581',
+      mapsUrl: 'https://maps.google.com/?cid=11581895562427791186&authuser=1',
       touristFootfall: 'Annually around 25,000 to 50,000 visitors.',
       village: 'Ingaleshwar',
       taluka: 'Basavan Bagewadi',
@@ -1004,8 +1009,12 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Renowned Hanuman pilgrimage shrine situated on the banks of River Krishna featuring an ornate three-tier Rajagopuram.',
       historicalOverview: 'Located on the serene banks of the Krishna River in Nidagundi taluka, Shri Yalagureshwar Temple is a celebrated regional shrine dedicated to Lord Hanuman. According to Sthala Purana traditions, Lord Sri Rama visited this spot during His vanavasa in the Tretayuga. Uniquely, the seven surrounding villages (Elu-Uru) share this single common Hanuman temple under the direction of Sri Rama. The entrance features a prominent three-tier Rajagopuram with a mortar sculpture of Lord Anjaneya in Yoga posture, leading to a decorated 30-by-30-foot mandapam with carved Dwarapalakas and the inner Garbhagriha.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/16_Shri_Yalagureshwar_Anjaneya_Temple_Yalaguru_Rajagopuram.png',
+      galleryUrls: [
+        'assets/images/explore/16_Shri_Yalagureshwar_Anjaneya_Temple_Yalaguru_Rajagopuram.png',
+        'assets/images/explore/16_Shri_Yalagureshwar_Anjaneya_Temple_Yalaguru_Inner_Entrance.png',
+        'assets/images/explore/16_Shri_Yalagureshwar_Anjaneya_Temple_Yalaguru_Silver_Idol.png',
+      ],
       locationName: 'Shri Yalagureshwar Temple, Yalagur Village, Tq: Nidagundi, Dist: Vijayapura -586213',
       coordinates: GeoCoordinates(
         latitude: 16.329248522721738,
@@ -1016,7 +1025,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '1 - 1.5 Hours',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.329248522721738,75.92586172080341',
+      mapsUrl: 'https://maps.google.com/?cid=16953907506715534641&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 250,000 to 300,000 visitors.',
       village: 'Yalaguru',
       taluka: 'Nidagundi',
@@ -1028,8 +1037,12 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Site',
       shortDescription: 'Sacred samadhi temple of Sharane Nilambike and historical site near the Krishna-Malaprabha confluence and historic battlefield.',
       historicalOverview: 'Situated in Tangadagi village within Muddebihal taluka near the Krishna River, this site holds deep historical and spiritual resonance. It houses the Aikya Mantapa and temple dedicated to Neelambike, the noble consort of Jagjyothi Basaveshwara and a revered Sharane who attained spiritual union here. Tangadagi is also historically significant in Deccan military history as the encampment and staging ground associated with the pivotal 1565 Battle of Talikota (Rakkasagi-Tangadagi).',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/17_Shri_Nilambike_Temple_Tangadagi_Entrance_Bridge.jpeg',
+      galleryUrls: [
+        'assets/images/explore/17_Shri_Nilambike_Temple_Tangadagi_Entrance_Bridge.jpeg',
+        'assets/images/explore/17_Shri_Nilambike_Aikya_Mantapa_Tangadagi_River_View.jpeg',
+        'assets/images/explore/17_Shri_Nilambike_Temple_Tangadagi_Murti_Shrine.jpeg',
+      ],
       locationName: 'Shri Nilambike temple & War field, Tangadagi Village, Tq: Muddebihal, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.201611443124424,
@@ -1040,7 +1053,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '45 - 60 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.201611443124424,76.1008949477058',
+      mapsUrl: 'https://maps.google.com/?cid=13993777314543027875&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 20,000 to 30,000 visitors.',
       village: 'Tangadagi',
       taluka: 'Muddebihal',
@@ -1052,8 +1065,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Prominent religious shrine dedicated to Kotturu Basaveshwara, attracting large rural gatherings in Muddebihal taluka.',
       historicalOverview: 'Located in Koluru village in Muddebihal taluka, the Shri Kotturu Basaveshwar Temple is a venerated religious centre dedicated to Sri Kotturu Basaveshwara. Serving as a spiritual beacon for agricultural families across the Don and Krishna river basins, the temple conducts extensive festive jathras, community feedings (dasoha), and devotional gatherings throughout the year.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/18_Shri_Kotturu_Basaveshwar_Temple_Koluru_Deity_Idols.png',
+      galleryUrls: [
+        'assets/images/explore/18_Shri_Kotturu_Basaveshwar_Temple_Koluru_Deity_Idols.png',
+        'assets/images/explore/18_19_Shri_Kotturu_Basaveshwar_and_Ishwarlinga_Temple_Koluru_Arch.jpeg',
+      ],
       locationName: 'Shri Kotturu Basaveshwar Temple, Koluru Village, Tq: Muddebihal, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.272228830335095,
@@ -1064,7 +1080,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.272228830335095,76.14670150690038',
+      mapsUrl: 'https://maps.google.com/?cid=14099906684649313496&authuser=1',
       touristFootfall: 'Annually around 1,00,000 to 150,000 visitors.',
       village: 'Koluru',
       taluka: 'Muddebihal',
@@ -1076,8 +1092,10 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Ancient stone Shiva shrine preserved in Koluru village embodying regional medieval temple architecture.',
       historicalOverview: 'Located in the historical village of Koluru in Muddebihal taluka, this ancient stone temple dedicated to Lord Ishwarlinga (Shiva) represents the enduring Shaivite heritage of rural Vijayapura. The shrine preserves classic stone sanctum elements and remains an oasis of quiet devotion and meditation.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/18_19_Shri_Kotturu_Basaveshwar_and_Ishwarlinga_Temple_Koluru_Arch.jpeg',
+      galleryUrls: [
+        'assets/images/explore/18_19_Shri_Kotturu_Basaveshwar_and_Ishwarlinga_Temple_Koluru_Arch.jpeg',
+      ],
       locationName: 'Shri Ishwarlinga Temple, Koluru Village, Tq: Muddebihal, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.272228830335095,
@@ -1088,7 +1106,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.272228830335095,76.14670150690038',
+      mapsUrl: 'https://maps.google.com/?cid=14099906684649313496&authuser=1',
       touristFootfall: 'Annually around 10,000 to 15,000 visitors.',
       village: 'Koluru',
       taluka: 'Muddebihal',
@@ -1100,8 +1118,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Religious Site',
       shortDescription: 'Major pilgrimage destination dedicated to Jagadguru Revanasiddheshwara, drawing over 400,000 devotees annually.',
       historicalOverview: 'Situated in Horti village in Indi taluka, Shri Revan Siddeshwar Temple is one of northern Karnataka\'s foremost pilgrimage destinations. Dedicated to the legendary Siddha saint and Veerashaiva pioneer Jagadguru Revanasiddheshwara, the temple attracts over 400,000 devotees each year. The grand annual car festival (Rathotsava) is celebrated with immense religious fervour, cultural ceremonies, and extensive community dasoha.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/20_Shri_Revan_Siddeshwar_Temple_Horti_Towering_Rajagopuram.png',
+      galleryUrls: [
+        'assets/images/explore/20_Shri_Revan_Siddeshwar_Temple_Horti_Towering_Rajagopuram.png',
+        'assets/images/explore/20_Shri_Revan_Siddeshwar_Temple_Horti_Master_Plan_View.jpeg',
+      ],
       locationName: 'Shri Revan Siddeshwar Temple, Horti Village, Tq: Indi, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 17.113386890175153,
@@ -1112,7 +1133,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '1 - 1.5 Hours',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=17.113386890175153,75.78639220174925',
+      mapsUrl: 'https://maps.google.com/?cid=5222218823538281255&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 4,00,000 to 450,000 visitors.',
       village: 'Horti',
       taluka: 'Indi',
@@ -1124,8 +1145,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Revered rural heritage temple dedicated to Lord Jattingeshwara in Indi taluka.',
       historicalOverview: 'Located in Hireroogi village in Indi taluka, the Shri Jattingeshwar Temple is an important historic religious centre for local communities. The temple hosts annual festivals, traditional rituals, and community gatherings that highlight the folk and spiritual heritage of the border region.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/21_Shri_Jattingeshwar_Temple_Hireroogi_Temple_Complex.png',
+      galleryUrls: [
+        'assets/images/explore/21_Shri_Jattingeshwar_Temple_Hireroogi_Temple_Complex.png',
+        'assets/images/explore/21_Shri_Jattingeshwar_Temple_Hireroogi_Black_Stone_Idol.png',
+      ],
       locationName: 'Shri Jattingeshwar Temple, Hireroogi Village, Tq: Indi, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 17.131084959685968,
@@ -1136,7 +1160,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=17.131084959685968,76.07609005720091',
+      mapsUrl: 'https://maps.google.com/?cid=12702955780972026906&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 75,000 to 110,000 visitors.',
       village: 'Hireroogi',
       taluka: 'Indi',
@@ -1148,8 +1172,12 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Ancient temple situated at the famed 10th-century Rashtrakuta university agrahara of Salotgi.',
       historicalOverview: 'Salotagi (historically Pavittage) is celebrated in epigraphical records as an illustrious university agrahara founded during the Rashtrakuta dynasty by Prime Minister Narayana under King Krishna III in 945 CE. The Shri Shivayogeshwar Temple stands in this historic educational sanctuary, drawing historians, pilgrims, and scholars who admire its monumental inscriptions, ancient stone pillars, and living spiritual traditions.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/22_Shri_Shivayogeshwar_Temple_Salotagi_Temple_Architecture.jpeg',
+      galleryUrls: [
+        'assets/images/explore/22_Shri_Shivayogeshwar_Temple_Salotagi_Temple_Architecture.jpeg',
+        'assets/images/explore/22_Shri_Shivayogeshwar_Temple_Salotagi_Historic_Fortified_Wall.png',
+        'assets/images/explore/22_Shri_Shivayogeshwar_Temple_Salotagi_Palkhi_Procession.jpg',
+      ],
       locationName: 'Shri Shivayogeshwar Temple, Salotagi Village, Tq: Indi, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 17.136945491810515,
@@ -1160,7 +1188,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '45 - 60 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=17.136945491810515,76.0213672490233',
+      mapsUrl: 'https://maps.google.com/?cid=16835784005454693734&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 75,000 to 100,000 visitors.',
       village: 'Salotagi',
       taluka: 'Indi',
@@ -1172,8 +1200,10 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Heritage Temple',
       shortDescription: 'Spiritual temple at Halasangi, celebrated both for its Shaivite devotion and rich modern Kannada literary movement.',
       historicalOverview: 'Located in Halasangi village within Chadachana taluka, the Shri Prabhulingeshwar Temple is dedicated to Lord Prabhulingeshwara (Shiva). Halasangi holds a celebrated chapter in 20th-century Kannada literature as the home of the \'Halasangi Geleyaru\' (Friends of Halasangi) literary movement, which revitalized folk songs and vachana traditions alongside deep temple spirituality.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/23_Shri_Prabhulingeshwar_Temple_Halasangi_Temple_Structure.png',
+      galleryUrls: [
+        'assets/images/explore/23_Shri_Prabhulingeshwar_Temple_Halasangi_Temple_Structure.png',
+      ],
       locationName: 'Shri Prabhulingeshwar Temple, Halasangi Village, Tq: Chadachana, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 17.315196377300083,
@@ -1184,7 +1214,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=17.315196377300083,75.84861995692088',
+      mapsUrl: 'https://maps.google.com/?cid=11898374071413924561&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 50,000 to 100,000 visitors.',
       village: 'Halasangi',
       taluka: 'Chadachana',
@@ -1196,8 +1226,12 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Religious Site',
       shortDescription: 'Renowned Sufi shrine in Sindagi taluka venerated by hundreds of thousands of Hindu and Muslim devotees.',
       historicalOverview: 'Situated in Yankanchi village in Sindagi taluka, the Shri Daval Malik Darga is one of the most prominent harmony shrines in northern Karnataka. Attracting around 250,000 pilgrims annually, the dargah is deeply revered across religious communities. Its annual Urs is marked by immense participation, traditional rituals, devotional poetry, and heartfelt communal unity.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/24_Shri_Daval_Malik_Darga_Yankanchi_Green_Dome_Tomb.png',
+      galleryUrls: [
+        'assets/images/explore/24_Shri_Daval_Malik_Darga_Yankanchi_Green_Dome_Tomb.png',
+        'assets/images/explore/24_Shri_Daval_Malik_Darga_Yankanchi_Decorated_Pillared_Hall_Banner.png',
+        'assets/images/explore/24_Shri_Daval_Malik_Darga_Yankanchi_New_Stone_Temple_Mantapa.png',
+      ],
       locationName: 'Shri Daval Malik Darga, Yankanchi Village, Tq: Sindagi, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.867542215427715,
@@ -1208,7 +1242,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '45 - 60 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.867542215427715,76.34782604430207',
+      mapsUrl: 'https://maps.google.com/?cid=16875128620585925586&authuser=1',
       touristFootfall: 'Annually around 220,000 to 250,000 visitors.',
       village: 'Yankanchi',
       taluka: 'Sindagi',
@@ -1220,8 +1254,12 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Ancient Temple',
       shortDescription: 'Magnificent Kalyana Chalukyan temple with intricate carvings, located 30 km from Sindgi.',
       historicalOverview: 'Kadlevada (Kadlewad), situated roughly 30 km from Sindgi in Devar Hipparagi taluka, was an esteemed agrahara and centre of Vedic learning during the Kalyana Chalukyan era. The Shri Someshwar Temple is a masterpiece of medieval stone architecture, featuring an ornate garbhagriha, ardha mantapa, lathe-turned stone pillars, and remarkable mythological friezes. Official tourism surveys note that the temple is situated in a rural landscape with basic rural access paths, offering intrepid heritage enthusiasts an authentic, uncommercialized historical treasure.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/26_Shri_Someshwar_Temple_Kadlewad_Complex_Front_View.png',
+      galleryUrls: [
+        'assets/images/explore/26_Shri_Someshwar_Temple_Kadlewad_Complex_Front_View.png',
+        'assets/images/explore/26_Shri_Someshwar_Temple_Kadlewad_Sanctum_Entrance.png',
+        'assets/images/explore/26_Shri_Someshwar_Temple_Kadlewad_Chalukyan_Carved_Wall.png',
+      ],
       locationName: 'Shri Someshwar Temple, Kadlewad village, Tq: Devar Hipparagi, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.933620336152867,
@@ -1232,7 +1270,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '45 - 60 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.933620336152867,76.04011473092619',
+      mapsUrl: 'https://maps.google.com/?cid=445457770927167303&authuser=1',
       touristFootfall: 'Annually around 25,000 to 50,000 visitors.',
       village: 'Kadlewad',
       taluka: 'Devar Hipparagi',
@@ -1244,8 +1282,12 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Ancient Temple',
       shortDescription: 'Dual historic temple complex in Devar Hipparagi celebrating centuries of Shaivite religious tradition.',
       historicalOverview: 'Located in the historical town of Devar Hipparagi, this dual temple complex comprises the revered Shri Mallayya (Mailara Linga) Temple and the ancient Shri Kalmeshwar Temple. Together, they represent major religious focal points in the eastern half of the district, drawing up to 300,000 devotees every year for grand annual fairs, religious poojas, and cultural celebrations.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/27_Shri_Mallayya_Temple_Devar_Hipparagi_Entrance_Mahadwara.png',
+      galleryUrls: [
+        'assets/images/explore/27_Shri_Mallayya_Temple_Devar_Hipparagi_Entrance_Mahadwara.png',
+        'assets/images/explore/27_Shri_Mallayya_Temple_Devar_Hipparagi_Sanctum_Sanctorum.png',
+        'assets/images/explore/27_Shri_Kalmeshwar_Temple_Devar_Hipparagi_Temple_Structure.png',
+      ],
       locationName: 'Shri Mallayya temple & Kalmeshwar temple – Devar Hipparagi Town, Tq: Devara Hippargi, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.81885138558309,
@@ -1256,7 +1298,9 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '45 - 60 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.81885138558309,76.0731047771539',
+      mapsUrl: 'https://maps.google.com/?cid=10987211075557589859&utm_source=gemini&authuser=1',
+      secondaryMapsUrl: 'https://maps.google.com/?cid=2623386600729654606&utm_source=gemini&authuser=1',
+      secondaryMapsLabel: 'Open Kalmeshwar in Maps',
       touristFootfall: 'Annually around 250,000 to 300,000 visitors.',
       village: 'Devar Hipparagi',
       taluka: 'Devara Hippargi',
@@ -1268,8 +1312,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Ancient Temple',
       shortDescription: 'Historic shrine dedicated to the valorous 12th-century warrior-saint and vachanakara Madivala Machideva.',
       historicalOverview: 'Situated along Sindagi Road in Devara Hipparagi town, this temple is consecrated to Shri Madivala Machideva, the courageous 12th-century warrior-saint, washerman by trade, and ardent guardian of the Sharana vachana manuscripts during the post-Kalyana turmoil. The shrine is visited by pilgrims seeking spiritual strength, ethical inspiration, and blessings.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/28_Shri_Madival_Machidevar_Temple_Devara_Hipparagi_Gopuram_Entrance.png',
+      galleryUrls: [
+        'assets/images/explore/28_Shri_Madival_Machidevar_Temple_Devara_Hipparagi_Gopuram_Entrance.png',
+        'assets/images/explore/28_Shri_Madival_Machidevar_Temple_Devara_Hipparagi_Main_Sanctum.png',
+      ],
       locationName: 'Shri Madival Machidevar temple, Sindagi Road, Devara Hipparagi Town, Tq: Devara Hipparagi, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.818088935447957,
@@ -1280,7 +1327,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.818088935447957,76.07082269638467',
+      mapsUrl: 'https://maps.google.com/?cid=17037112062877902423&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 100,000 to 150,000 visitors.',
       village: 'Devara Hipparagi',
       taluka: 'Devara Hipparagi',
@@ -1292,8 +1339,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Bouddha Vihar',
       shortDescription: 'Peaceful Buddhist Vihar in Jalanagar dedicated to the Buddha and his chief disciple Sariputra.',
       historicalOverview: 'Located along the Jalanagar Main Road in Vijayapura city, the Sariputra Bhodhidamma Bouddha Vihar is an important Buddhist cultural and spiritual center. Named in honor of the Buddha\'s chief disciple Sariputra, the Vihar provides a peaceful sanctuary for meditation, Dhamma teachings, and community reflections, hosting commemorations during Buddha Poornima and Vijayadashami.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/30_Sariputra_Bhodhidamma_Buddha_Vihar_Vijayapura_White_Dome.png',
+      galleryUrls: [
+        'assets/images/explore/30_Sariputra_Bhodhidamma_Buddha_Vihar_Vijayapura_White_Dome.png',
+        'assets/images/explore/30_Sariputra_Bhodhidamma_Buddha_Vihar_Vijayapura_Aerial_View.png',
+      ],
       locationName:
           'Budda Vihar, Jalanagar Main Road, Vijayapura, Tq & Dist: Vijayapura',
       coordinates: GeoCoordinates(
@@ -1305,7 +1355,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '30 - 45 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.809057972996072,75.72090649028004',
+      mapsUrl: 'https://maps.google.com/?cid=9599204001241481422&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 100,000 to 150,000 visitors.',
       village: 'Vijayapura City',
       taluka: 'Vijayapura',
@@ -1317,8 +1367,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Religious Site',
       shortDescription: 'Spiritual ashram and Math on Ukkali Road famous for the annual Sadashiva Muthyana Jatre.',
       historicalOverview: 'Located in Katakanahalli (Kathnalli) village along Ukkali Road just south of Vijayapura, the Shri Guru Chakravarthi Sadashiv Math is a revered spiritual monastery dedicated to Sadashiva Shivayogi. The Math actively conducts religious teachings, social welfare, and the massive annual Sadashiva Muthyana Jatre, which brings together upwards of 400,000 devotees for devotional bhajans, rathotsava, and prasada seva.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/31_Shri_Guru_Sadashiv_Math_Katakanahalli_Ashram_Entrance.png',
+      galleryUrls: [
+        'assets/images/explore/31_Shri_Guru_Sadashiv_Math_Katakanahalli_Ashram_Entrance.png',
+        'assets/images/explore/31_Shri_Guru_Sadashiv_Math_Katakanahalli_Sanctum_Interior.png',
+      ],
       locationName: 'Shri Guru Chakravarthi Sadashiv Math, Kathanlli Village, Ukkali Road, Vijayapura, Tq & Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 16.768520515222136,
@@ -1329,7 +1382,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '45 - 60 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=16.768520515222136,75.80728388834528',
+      mapsUrl: 'https://maps.google.com/?cid=1059896928084546922&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 350,000 to 400,000 visitors.',
       village: 'Kathnalli / Katakanahalli',
       taluka: 'Vijayapura',
@@ -1341,8 +1394,10 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Religious Site',
       shortDescription: 'Revered spiritual monastery in Lachyan founded by the celebrated ascetic Shri Siddhaling Maharaj.',
       historicalOverview: 'Situated in Lachyan village in Indi taluka near the border with Maharashtra, the Shri Siddalinga Maharaj Math is a prominent spiritual sanctuary associated with the venerable 19th-20th century ascetic and healer Shri Siddhaling Maharaj. The Math is famous for its peaceful ambience, philanthropic activities, and the grand annual Jatra Mahotsava where devotees gather for religious vows and spiritual discourse.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/32_Shri_Siddalinga_Maharaj_Math_Lachyan_Golden_Shrine_Murti.png',
+      galleryUrls: [
+        'assets/images/explore/32_Shri_Siddalinga_Maharaj_Math_Lachyan_Golden_Shrine_Murti.png',
+      ],
       locationName: 'Shri Siddalinga Maharaj Math, Lachyan Village, Tq: Indi, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 17.173670384329828,
@@ -1353,7 +1408,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '45 - 60 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=17.173670384329828,75.95506447231202',
+      mapsUrl: 'https://maps.google.com/?cid=16209910458340954720&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 200,000 to 250,000 visitors.',
       village: 'Lachyan',
       taluka: 'Indi',
@@ -1365,8 +1420,11 @@ class LocalPlacesRepository implements PlacesRepository {
       category: 'Religious Site',
       shortDescription: 'Ancient agrahara temple on the banks of the sacred Bhima River retaining Kalyana Chalukyan architecture.',
       historicalOverview: 'Dulkhed is an ancient agrahara situated on the picturesque right bank of the sacred Bhima River in Chadachana taluka. The Shri Shankarlinga Temple preserves an authentic Kalyana Chalukyan sanctum (garbhagriha) and ardha mantapa, alongside a graceful mukhamantapa constructed during the later Desai chieftain period. Devotees perform sacred river baths in the Bhima River followed by worship at the temple, celebrating rich local religious and cultural traditions.',
-      imageUrl: '',
-      galleryUrls: [],
+      imageUrl: 'assets/images/explore/33_Shri_Shankarlinga_Temple_Dulkhed_Temple_Courtyard.jpg',
+      galleryUrls: [
+        'assets/images/explore/33_Shri_Shankarlinga_Temple_Dulkhed_Temple_Courtyard.jpg',
+        'assets/images/explore/33_Shri_Shankarlinga_Temple_Dulkhed_Decorated_Shivalinga.jpeg',
+      ],
       locationName: 'Shri Sankaralinga Temple, Dulkhed Village, Tq: Chadachana, Dist: Vijayapura',
       coordinates: GeoCoordinates(
         latitude: 17.39574577797792,
@@ -1377,7 +1435,7 @@ class LocalPlacesRepository implements PlacesRepository {
       gateClosingTime: null,
       ticketPriceInfo: 'Free Entry',
       suggestedDuration: '45 - 60 Minutes',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=17.39574577797792,75.85377944102845',
+      mapsUrl: 'https://maps.google.com/?cid=9841129921067248332&utm_source=gemini&authuser=1',
       touristFootfall: 'Annually around 150,000 to 200,000 visitors.',
       village: 'Dulkhed',
       taluka: 'Chadachana',
@@ -1385,23 +1443,28 @@ class LocalPlacesRepository implements PlacesRepository {
     ),
     Place(
       id: 'saversangi_destination',
-      name: 'Saversangi',
+      name: 'Jnyanayogi Shree Siddeshwar Swamiji Tree Park Savalasanga',
       category: 'Heritage Site',
-      shortDescription: 'Official destination details pending verification by Karnataka Tourism Department.',
-      historicalOverview: 'Official heritage documentation and administrative survey details for Saversangi are pending field verification and publication by the District Tourism Development Committee, Vijayapura.',
-      imageUrl: '',
-      galleryUrls: [],
-      locationName: 'Saversangi, Vijayapura District (Location details pending verification)',
-      coordinates: GeoCoordinates(latitude: 0.0, longitude: 0.0),
-      openingTime: 'Pending Verification',
-      closingTime: 'Pending Verification',
-      gateClosingTime: null,
-      ticketPriceInfo: 'Information Unavailable',
-      suggestedDuration: 'Pending Verification',
-      mapsUrl: null,
-      touristFootfall: 'Pending Verification',
-      village: 'Saversangi',
-      taluka: 'Pending Verification',
+      shortDescription: 'Serene ecological tree park and spiritual memorial garden dedicated to Pujya Jnyanayogi Shree Siddeshwar Swamiji.',
+      historicalOverview: 'Named in revered memory of the revered philosopher-saint Jnyanayogi Shree Siddeshwar Swamiji of Jnana Yogashrama Vijayapura, this expansive ecological tree park at Savalasanga (Saversangi) combines green conservation, landscaped nature pathways, and spiritual tranquility for pilgrims and nature travelers across North Karnataka.',
+      imageUrl: 'assets/images/explore/siddeshwar_tree_park_savalasanga.png',
+      galleryUrls: [
+        'assets/images/explore/siddeshwar_tree_park_savalasanga.png',
+      ],
+      imageCaptions: {
+        'assets/images/explore/siddeshwar_tree_park_savalasanga.png': 'Jnyanayogi Shree Siddeshwar Swamiji Tree Park Savalasanga Entrance Arch',
+      },
+      locationName: 'Jnyanayogi Shree Siddeshwar Swamiji Tree Park, Savalasanga, Vijayapura District',
+      coordinates: GeoCoordinates(latitude: 17.0673, longitude: 75.7628),
+      openingTime: '08:00 AM',
+      closingTime: '06:00 PM',
+      gateClosingTime: '05:30 PM',
+      ticketPriceInfo: 'Free Entry / Eco-Park Visiting Guidelines Apply',
+      suggestedDuration: '1 - 2 Hours',
+      mapsUrl: 'https://maps.app.goo.gl/EearL3ax9KfCQuxc6',
+      touristFootfall: 'Ecological & Spiritual Visitors',
+      village: 'Savalasanga',
+      taluka: 'Vijayapura',
       district: 'Vijayapura',
     ),
   ];
@@ -1426,6 +1489,14 @@ class LocalPlacesRepository implements PlacesRepository {
       }
       if (id == 'upli_buruz') {
         return _curatedPlaces.firstWhere((p) => p.id == 'upli_burj');
+      }
+      if (id == 'basavanagudi') {
+        return _curatedPlaces.firstWhere((p) => p.id == 'basavana_bagewadi');
+      }
+      if (id == 'saversangi' || id == 'savalasanga') {
+        return _curatedPlaces.firstWhere(
+          (p) => p.id == 'saversangi_destination',
+        );
       }
       return _curatedPlaces.firstWhere((p) => p.id == id);
     } catch (_) {
@@ -1467,7 +1538,11 @@ class LocalPlacesRepository implements PlacesRepository {
           p.locationName.toLowerCase().contains(q) ||
           (p.village?.toLowerCase().contains(q) ?? false) ||
           (p.taluka?.toLowerCase().contains(q) ?? false) ||
-          (p.district?.toLowerCase().contains(q) ?? false);
+          (p.district?.toLowerCase().contains(q) ?? false) ||
+          (p.id == 'saversangi_destination' &&
+              ('saversangi'.contains(q) ||
+                  'savalasanga'.contains(q) ||
+                  'siddeshwar'.contains(q)));
     }).toList();
   }
 

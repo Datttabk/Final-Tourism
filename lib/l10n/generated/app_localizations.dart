@@ -650,6 +650,12 @@ abstract class AppLocalizations {
   /// **'Tourist Guides'**
   String get touristGuides;
 
+  /// No description provided for @tangaRides.
+  ///
+  /// In en, this message translates to:
+  /// **'Tanga Rides'**
+  String get tangaRides;
+
   /// No description provided for @searchHotels.
   ///
   /// In en, this message translates to:
@@ -673,6 +679,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Search guides by name or language...'**
   String get searchGuides;
+
+  /// No description provided for @searchTanga.
+  ///
+  /// In en, this message translates to:
+  /// **'Search tanga rides by provider...'**
+  String get searchTanga;
 
   /// No description provided for @googleMaps.
   ///

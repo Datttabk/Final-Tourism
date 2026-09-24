@@ -2,7 +2,8 @@ enum DiscoverCategory {
   accommodation('Hotels & Stay', 'Hotels & Stay'),
   food('Local Cuisine', 'Local Cuisine'),
   bazaars('Bazaars & Craft', 'Bazaars & Craft'),
-  guides('Tourist Guides', 'Tourist Guides');
+  guides('Tourist Guides', 'Tourist Guides'),
+  tanga('Tanga Rides', 'Tanga Rides');
 
   final String title;
   final String shortName;

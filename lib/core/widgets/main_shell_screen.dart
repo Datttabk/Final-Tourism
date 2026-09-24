@@ -6,6 +6,7 @@ import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/safety/presentation/screens/safety_screen.dart';
 import '../../features/travel_plans/presentation/screens/plans_screen.dart';
 import '../localization/l10n_extensions.dart';
+import '../services/plans_nav_controller.dart';
 
 /// Scope to allow deep tab switching from within children (e.g. Home quick categories)
 class MainShellScope extends InheritedWidget {
@@ -58,6 +59,23 @@ class _MainShellScreenState extends State<MainShellScreen> {
   void initState() {
     super.initState();
     _currentIndex = widget.initialIndex;
+    PlansNavController.requestedTab.addListener(_onRequestedTabChanged);
+  }
+
+  @override
+  void dispose() {
+    PlansNavController.requestedTab.removeListener(_onRequestedTabChanged);
+    super.dispose();
+  }
+
+  void _onRequestedTabChanged() {
+    final tab = PlansNavController.requestedTab.value;
+    if (tab != null && mounted) {
+      setState(() {
+        _currentIndex = tab;
+      });
+      PlansNavController.requestedTab.value = null;
+    }
   }
 
   void _onTabSelected(int index) {

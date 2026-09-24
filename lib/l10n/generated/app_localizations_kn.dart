@@ -292,6 +292,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get touristGuides => 'ಪ್ರವಾಸಿ ಮಾರ್ಗದರ್ಶಿಗಳು';
 
   @override
+  String get tangaRides => 'ಟಾಂಗಾ ಸವಾರಿ';
+
+  @override
   String get searchHotels => 'ಹೋಟೆಲ್ ಹೆಸರು ಅಥವಾ ಸ್ಥಳ ಹುಡುಕಿ...';
 
   @override
@@ -302,6 +305,9 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get searchGuides => 'ಮಾರ್ಗದರ್ಶಕರ ಹೆಸರು ಅಥವಾ ಭಾಷೆ ಹುಡುಕಿ...';
+
+  @override
+  String get searchTanga => 'ಟಾಂಗಾ ಸವಾರರನ್ನು ಹುಡುಕಿ...';
 
   @override
   String get googleMaps => 'ಗೂಗಲ್ ಮ್ಯಾಪ್ಸ್';

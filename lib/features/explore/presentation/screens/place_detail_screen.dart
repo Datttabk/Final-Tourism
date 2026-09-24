@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../core/localization/l10n_extensions.dart';
+import '../../../../core/services/user_activity_controller.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/utils/url_launcher_helper.dart';
@@ -26,12 +27,19 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
   @override
   void initState() {
     super.initState();
-    _isBookmarked = widget.place.isBookmarked;
+    _isBookmarked = UserActivityController.instance.isPlaceBookmarked(
+      widget.place.id,
+    );
+    UserActivityController.instance.recordPlaceViewed(widget.place.id);
   }
 
-  void _toggleBookmark() {
+  void _toggleBookmark() async {
+    await UserActivityController.instance.togglePlaceBookmark(widget.place.id);
+    if (!mounted) return;
     setState(() {
-      _isBookmarked = !_isBookmarked;
+      _isBookmarked = UserActivityController.instance.isPlaceBookmarked(
+        widget.place.id,
+      );
     });
 
     ScaffoldMessenger.of(context).showSnackBar(
@@ -65,8 +73,9 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
     );
   }
 
-  void _openInMaps(BuildContext context, Place place) {
+  void _openInMaps(BuildContext context, Place place, [String? overrideUrl]) {
     final url =
+        overrideUrl ??
         place.mapsUrl ??
         'https://www.google.com/maps/search/?api=1&query=${Uri.encodeComponent('${place.name}, Vijayapura, Karnataka')}';
 
@@ -547,107 +556,43 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
                       ),
                   const SizedBox(height: 16),
 
-                  // 4. Visiting Timings (Shown when supplied)
-                  if (place.visitingTimings != null &&
-                      place.visitingTimings!.isNotEmpty) ...[
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 20),
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: AppColors.surface,
-                        borderRadius: BorderRadius.circular(14),
-                        border: Border.all(
-                          color: AppColors.primary.withValues(alpha: 0.35),
-                        ),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: AppColors.primary.withValues(alpha: 0.12),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: const Icon(
-                              Icons.schedule,
-                              size: 20,
-                              color: AppColors.primary,
-                            ),
-                          ),
-                          const SizedBox(width: 12),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  l10n.timings,
-                                  style: AppTextStyles.label.copyWith(
-                                    fontSize: 12,
-                                    color: AppColors.textSecondary,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  place.visitingTimings!,
-                                  style: AppTextStyles.body.copyWith(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.textPrimary,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                  // 4. Key Info Card: Timings, Gate Closing & Ticket Price
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: AppColors.surface,
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(color: AppColors.border),
                     ),
-                  ] else ...[
-                    // Key Info Card: Standard Timings & Ticket Price
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 20),
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: AppColors.surface,
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: AppColors.border),
-                      ),
-                      child: Column(
-                        children: [
-                          _InfoRow(
-                            icon: Icons.schedule,
-                            title: l10n.timings,
-                            detail:
-                                '${place.openingTime} – ${place.closingTime}',
-                          ),
-                          if (place.gateClosingTime != null) ...[
-                            const Divider(height: 20),
-                            _InfoRow(
-                              icon: Icons.door_front_door_outlined,
-                              title: 'Gate Closing',
-                              detail: place.gateClosingTime!,
-                              isAlert: true,
-                            ),
-                          ],
+                    child: Column(
+                      children: [
+                        _InfoRow(
+                          icon: Icons.schedule,
+                          title: l10n.timings,
+                          detail: (place.visitingTimings != null &&
+                                  place.visitingTimings!.isNotEmpty)
+                              ? place.visitingTimings!
+                              : '${place.openingTime} – ${place.closingTime}',
+                        ),
+                        if (place.gateClosingTime != null) ...[
                           const Divider(height: 20),
                           _InfoRow(
-                            icon: Icons.confirmation_number_outlined,
-                            title: l10n.entryFee,
-                            detail: place.ticketPriceInfo,
+                            icon: Icons.door_front_door_outlined,
+                            title: 'Gate Closing',
+                            detail: place.gateClosingTime!,
+                            isAlert: true,
                           ),
-                          if (place.touristFootfall != null &&
-                              place.touristFootfall!.isNotEmpty) ...[
-                            const Divider(height: 20),
-                            _InfoRow(
-                              icon: Icons.groups_outlined,
-                              title: 'Tourist Footfall',
-                              detail: place.touristFootfall!,
-                            ),
-                          ],
                         ],
-                      ),
+                        const Divider(height: 20),
+                        _InfoRow(
+                          icon: Icons.confirmation_number_outlined,
+                          title: l10n.entryFee,
+                          detail: place.ticketPriceInfo,
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
 
                   // 5. How to Reach Section
                   if (place.howToReach != null &&
@@ -685,31 +630,89 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
                     const SizedBox(height: 20),
                   ],
 
-                  // 6. Clickable [ Open in Maps ] Action Button
-                  SizedBox(
-                    width: double.infinity,
-                    height: 52,
-                    child: ElevatedButton.icon(
-                      onPressed: () => _openInMaps(context, place),
-                      icon: const Icon(Icons.map_rounded, size: 20),
-                      label: const Text(
-                        'Open in Maps',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 0.3,
+                  // 6. Clickable [ Open in Maps ] Action Button(s)
+                  if (place.secondaryMapsUrl != null &&
+                      place.secondaryMapsUrl!.isNotEmpty) ...[
+                    SizedBox(
+                      width: double.infinity,
+                      height: 52,
+                      child: ElevatedButton.icon(
+                        onPressed: () =>
+                            _openInMaps(context, place, place.mapsUrl),
+                        icon: const Icon(Icons.map_rounded, size: 20),
+                        label: Text(
+                          place.name.contains('Mallayya')
+                              ? 'Open Mallayya in Maps'
+                              : 'Open in Maps',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 0.3,
+                          ),
                         ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.primary,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.primary,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          elevation: 1,
                         ),
-                        elevation: 1,
                       ),
                     ),
-                  ),
+                    const SizedBox(height: 10),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 52,
+                      child: ElevatedButton.icon(
+                        onPressed: () =>
+                            _openInMaps(context, place, place.secondaryMapsUrl),
+                        icon: const Icon(Icons.map_rounded, size: 20),
+                        label: Text(
+                          place.secondaryMapsLabel ?? 'Open Kalmeshwar in Maps',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 0.3,
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.surface,
+                          foregroundColor: AppColors.primary,
+                          side: const BorderSide(color: AppColors.primary),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          elevation: 1,
+                        ),
+                      ),
+                    ),
+                  ] else ...[
+                    SizedBox(
+                      width: double.infinity,
+                      height: 52,
+                      child: ElevatedButton.icon(
+                        onPressed: () => _openInMaps(context, place),
+                        icon: const Icon(Icons.map_rounded, size: 20),
+                        label: const Text(
+                          'Open in Maps',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 0.3,
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.primary,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          elevation: 1,
+                        ),
+                      ),
+                    ),
+                  ],
                   if (place.bookingUrl != null &&
                       place.bookingUrl!.isNotEmpty) ...[
                     const SizedBox(height: 12),

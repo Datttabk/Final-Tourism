@@ -293,6 +293,9 @@ class AppLocalizationsMr extends AppLocalizations {
   String get touristGuides => 'पर्यटक गाईड';
 
   @override
+  String get tangaRides => 'तांगा सवारी';
+
+  @override
   String get searchHotels => 'हॉटेलचे नाव किंवा स्थान शोधा...';
 
   @override
@@ -303,6 +306,9 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get searchGuides => 'गाईडचे नाव किंवा भाषा शोधा...';
+
+  @override
+  String get searchTanga => 'तांगा सवारी शोधा...';
 
   @override
   String get googleMaps => 'गुगल मॅप्स';

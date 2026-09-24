@@ -11,12 +11,12 @@ void main() {
       repository = LocalPlacesRepository();
     });
 
-    test('Canonical repository contains 49 total destinations', () async {
+    test('Canonical repository contains 48 total destinations', () async {
       final places = await repository.getCuratedPlaces();
-      expect(places.length, 49);
+      expect(places.length, 48);
     });
 
-    test('Preserves all 23 existing canonical destinations', () async {
+    test('Preserves all 22 existing canonical destinations and removes Navraspur Mosque', () async {
       final places = await repository.getCuratedPlaces();
       final ids = places.map((p) => p.id).toSet();
       final requiredExistingIds = [
@@ -39,7 +39,6 @@ void main() {
         'mehtar_mahal',
         'almatti_dam',
         'archaeological_museum',
-        'navraspur_ainapur_mosque',
         'ainapur_tomb',
         'jahan_begum_tomb',
         'kumatagi',
@@ -51,6 +50,11 @@ void main() {
           reason: 'Missing existing destination: $id',
         );
       }
+      expect(
+        ids.contains('navraspur_ainapur_mosque'),
+        isFalse,
+        reason: 'Navraspur / Ainapur Mosque must be completely removed from Explore',
+      );
     });
 
     test('Shivagiri exists only once in the dataset (No Duplicates)', () async {
@@ -73,47 +77,53 @@ void main() {
       expect(place.bookingUrl, 'https://asi.paygov.org.in');
       expect(place.coordinates.latitude, closeTo(16.830199, 0.0001));
       expect(place.coordinates.longitude, closeTo(75.735789, 0.0001));
-      expect(place.mapsUrl, contains('16.83019944264078,75.73578986420485'));
-    });
-
-    test(
-      'Ibrahim Rauza updated with exact source timings, fee and GPS',
-      () async {
-        final place = await repository.getPlaceById('ibrahim_rauza');
-        expect(place, isNotNull);
-        expect(place!.openingTime, '06:00 AM');
-        expect(place.closingTime, '05:40 PM');
-        expect(place.ticketPriceInfo, contains('₹20'));
-        expect(place.coordinates.latitude, closeTo(16.827218, 0.0001));
-        expect(place.coordinates.longitude, closeTo(75.702108, 0.0001));
-        expect(place.mapsUrl, contains('16.827218927870497,75.70210842852073'));
-      },
-    );
-
-    test('Chattaraki is the FIRST newly introduced destination after historical highlights', () async {
-      final places = await repository.getCuratedPlaces();
-      // Index 23 is the 24th place (right after the 23 preserved places)
-      expect(places[23].id, 'shri_dattatreya_temple_chattaraki');
-      expect(places[23].name, contains('Chattaraki'));
-      expect(places[23].coordinates.latitude, closeTo(16.940651, 0.0001));
-      expect(places[23].coordinates.longitude, closeTo(76.063489, 0.0001));
       expect(
-        places[23].mapsUrl,
-        contains('16.940651580018084,76.06348921930643'),
+        place.mapsUrl,
+        'https://maps.google.com/?cid=15664829629228524966&utm_source=gemini&authuser=1',
       );
     });
 
-    test(
-      'Saversangi destination handled via pending verification mechanism',
-      () async {
-        final place = await repository.getPlaceById('saversangi_destination');
-        expect(place, isNotNull);
-        expect(place!.name, 'Saversangi');
-        expect(place.openingTime, 'Pending Verification');
-        expect(place.ticketPriceInfo, 'Information Unavailable');
-        expect(place.mapsUrl, isNull);
-      },
-    );
+    test('Ibrahim Rauza updated with exact source timings, fee, GPS and supplied Google Maps link', () async {
+      final place = await repository.getPlaceById('ibrahim_rauza');
+      expect(place, isNotNull);
+      expect(place!.openingTime, '06:00 AM');
+      expect(place.closingTime, '05:40 PM');
+      expect(place.ticketPriceInfo, contains('₹20'));
+      expect(place.bookingUrl, 'https://asi.paygov.org.in');
+      expect(place.coordinates.latitude, closeTo(16.827218, 0.0001));
+      expect(place.coordinates.longitude, closeTo(75.702108, 0.0001));
+      expect(
+        place.mapsUrl,
+        'https://maps.google.com/?cid=765027159616443248&utm_source=gemini&authuser=1',
+      );
+    });
+
+    test('Chattaraki is the FIRST newly introduced destination after historical highlights', () async {
+      final places = await repository.getCuratedPlaces();
+      // Index 22 is the 23rd place (right after the 22 preserved historical places)
+      expect(places[22].id, 'shri_dattatreya_temple_chattaraki');
+      expect(places[22].name, contains('Chattaraki'));
+      expect(places[22].coordinates.latitude, closeTo(16.940651, 0.0001));
+      expect(places[22].coordinates.longitude, closeTo(76.063489, 0.0001));
+      expect(
+        places[22].mapsUrl,
+        'https://maps.google.com/?cid=14984040426479515462&utm_source=gemini&authuser=1',
+      );
+    });
+
+    test('Savalasanga (Saversangi) updated with exact name, local image, and verified Google Maps link', () async {
+      final place = await repository.getPlaceById('saversangi_destination');
+      expect(place, isNotNull);
+      expect(
+        place!.name,
+        'Jnyanayogi Shree Siddeshwar Swamiji Tree Park Savalasanga',
+      );
+      expect(
+        place.imageUrl,
+        'assets/images/explore/siddeshwar_tree_park_savalasanga.png',
+      );
+      expect(place.mapsUrl, 'https://maps.app.goo.gl/EearL3ax9KfCQuxc6');
+    });
 
     test(
       'Search returns matches by name, village, town, taluka, and category',
@@ -128,6 +138,13 @@ void main() {
         );
         expect((await repository.searchPlaces('Lakshmi')).isNotEmpty, isTrue);
         expect((await repository.searchPlaces('Kanamadi')).isNotEmpty, isTrue);
+        final navraspurMatches = await repository.searchPlaces('Navraspur');
+        expect(
+          navraspurMatches.any((p) => p.id == 'navraspur_ainapur_mosque'),
+          isFalse,
+          reason:
+              'Navraspur / Ainapur Mosque must not appear in search results',
+        );
         expect(
           (await repository.searchPlaces('Amoghsiddeshwar')).isNotEmpty,
           isTrue,
@@ -201,7 +218,7 @@ void main() {
     );
 
     testWidgets(
-      'PlaceDetailScreen displays Tourist Footfall and location info for Chattaraki',
+      'PlaceDetailScreen does NOT display Tourist Footfall in Explore UI',
       (tester) async {
         final place = await repository.getPlaceById(
           'shri_dattatreya_temple_chattaraki',
@@ -214,14 +231,13 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.textContaining('Chattaraki'), findsWidgets);
-        expect(find.text('Tourist Footfall'), findsOneWidget);
-        expect(find.textContaining('25,000 to 50,000'), findsOneWidget);
+        expect(find.text('Tourist Footfall'), findsNothing);
         expect(find.text('Open in Maps'), findsOneWidget);
       },
     );
 
     testWidgets(
-      'PlaceDetailScreen handles Saversangi pending verification gracefully',
+      'PlaceDetailScreen displays updated name and details for Savalasanga',
       (tester) async {
         final place = await repository.getPlaceById('saversangi_destination');
         expect(place, isNotNull);
@@ -231,10 +247,76 @@ void main() {
         );
         await tester.pumpAndSettle();
 
-        expect(find.text('Saversangi'), findsWidgets);
-        expect(find.text('Pending Verification'), findsWidgets);
-        expect(find.text('Information Unavailable'), findsWidgets);
+        expect(
+          find.text(
+            'Jnyanayogi Shree Siddeshwar Swamiji Tree Park Savalasanga',
+          ),
+          findsWidgets,
+        );
+        expect(find.text('Open in Maps'), findsOneWidget);
       },
     );
+
+    test('All 15 coordinate-only destinations now have verified destination place links', () async {
+      final baraKaman = await repository.getPlaceById('bara_kaman');
+      expect(
+        baraKaman!.mapsUrl,
+        contains('place_id:ChIJw7ZYPX9VxjsRFkxnoKxJgrg'),
+      );
+
+      final malik = await repository.getPlaceById('malik_e_maidan');
+      expect(malik!.mapsUrl, contains('place_id:ChIJc6Xr4oH_xjsRX1lbdWb_-Rw'));
+
+      final jama = await repository.getPlaceById('jama_masjid');
+      expect(jama!.mapsUrl, contains('place_id:ChIJ1fq10HFVxjsR_hnpELBdgAw'));
+
+      final taj = await repository.getPlaceById('taj_bawdi');
+      expect(taj!.mapsUrl, contains('place_id:ChIJ3SZ87Yb_xjsRGSNZknjCaGc'));
+
+      final asar = await repository.getPlaceById('asar_mahal');
+      expect(asar!.mapsUrl, contains('place_id:ChIJtYi0zHtVxjsROAN8Goqqd8o'));
+
+      final gagan = await repository.getPlaceById('gagan_mahal');
+      expect(gagan!.mapsUrl, contains('place_id:ChIJEWTaIXxVxjsReMUX8ZX3IYA'));
+
+      final jal = await repository.getPlaceById('jal_mahal');
+      expect(jal!.mapsUrl, contains('place_id:ChIJh705OnxVxjsR28cyP3dvW4E'));
+
+      final narasimha = await repository.getPlaceById('narasimha_temple');
+      expect(
+        narasimha!.mapsUrl,
+        contains('place_id:ChIJZ88kt4H_xjsRBvP5K8l0Juc'),
+      );
+      expect(narasimha.imageUrl, 'assets/images/explore/narasimha_temple.png');
+
+      final jod = await repository.getPlaceById('jod_gumbaz');
+      expect(jod!.mapsUrl, contains('place_id:ChIJTWzfPof_xjsRoHLGyNDAqEE'));
+      expect(jod.imageUrl, 'assets/images/explore/jod_gumbaz.png');
+
+      final upli = await repository.getPlaceById('upli_burj');
+      expect(upli!.mapsUrl, contains('place_id:ChIJr--Xj3__xjsRoJgLu5WR9pw'));
+
+      final mehtar = await repository.getPlaceById('mehtar_mahal');
+      expect(mehtar!.mapsUrl, contains('place_id:ChIJyaMZGXtVxjsRhq01fpXVdnM'));
+
+      final museum = await repository.getPlaceById('archaeological_museum');
+      expect(museum!.mapsUrl, contains('place_id:ChIJtwDZvHRVxjsR5LmwCkZlSXk'));
+
+      final navraspur = await repository.getPlaceById(
+        'navraspur_ainapur_mosque',
+      );
+      expect(navraspur, isNull);
+
+      final ainapur = await repository.getPlaceById('ainapur_tomb');
+      expect(
+        ainapur!.mapsUrl,
+        contains('place_id:ChIJr5PYWRFVxjsRP6nj9JTnnyw'),
+      );
+      expect(ainapur.imageUrl, equals('assets/images/explore/ainapur_tomb.png'));
+
+      final jahan = await repository.getPlaceById('jahan_begum_tomb');
+      expect(jahan!.mapsUrl, contains('place_id:ChIJk6jIqvFUxjsREtR2c0XyzaQ'));
+      expect(jahan.imageUrl, equals('assets/images/explore/jahan_begum_tomb.png'));
+    });
   });
 }

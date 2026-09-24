@@ -6,6 +6,7 @@ import '../../features/auth/presentation/screens/sign_in_screen.dart';
 import '../../features/auth/presentation/screens/sign_up_screen.dart';
 import '../../features/explore/domain/models/place.dart';
 import '../../features/explore/presentation/screens/place_detail_screen.dart';
+import '../../features/profile/presentation/screens/about_vijayapura_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../widgets/main_shell_screen.dart';
 
@@ -46,6 +47,13 @@ abstract final class AppRouter {
       case '/profile':
         return MaterialPageRoute(
           builder: (_) => const ProfileScreen(),
+          settings: settings,
+        );
+
+      case '/about':
+      case '/about-vijayapura':
+        return MaterialPageRoute(
+          builder: (_) => const AboutVijayapuraScreen(),
           settings: settings,
         );
 

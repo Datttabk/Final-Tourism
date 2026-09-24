@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../../../../core/localization/l10n_extensions.dart';
+import '../../../../core/services/plans_nav_controller.dart';
+import '../../../../core/services/user_activity_controller.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/utils/url_launcher_helper.dart';
 import '../../../../core/widgets/app_network_image.dart';
 import '../../../explore/domain/models/place.dart';
 import '../../../explore/presentation/screens/place_detail_screen.dart';
@@ -30,7 +32,26 @@ class _PlansScreenState extends State<PlansScreen> {
   void initState() {
     super.initState();
     _selectedPlanIndex = widget.initialPlanIndex;
+    PlansNavController.selectedPlanIndex.addListener(_onPlanNavChanged);
     _loadPlans();
+  }
+
+  @override
+  void dispose() {
+    PlansNavController.selectedPlanIndex.removeListener(_onPlanNavChanged);
+    super.dispose();
+  }
+
+  void _onPlanNavChanged() {
+    final newIndex = PlansNavController.selectedPlanIndex.value;
+    if (mounted &&
+        newIndex != _selectedPlanIndex &&
+        newIndex >= 0 &&
+        newIndex < _plans.length) {
+      setState(() {
+        _selectedPlanIndex = newIndex;
+      });
+    }
   }
 
   Future<void> _loadPlans() async {
@@ -76,6 +97,44 @@ class _PlansScreenState extends State<PlansScreen> {
             ),
           ],
         ),
+        actions: [
+          if (_plans.isNotEmpty && _selectedPlanIndex < _plans.length)
+            ListenableBuilder(
+              listenable: UserActivityController.instance,
+              builder: (context, _) {
+                final currentPlan = _plans[_selectedPlanIndex];
+                final isSaved = UserActivityController.instance.isPlanSaved(
+                  currentPlan.id,
+                );
+                return IconButton(
+                  tooltip: isSaved ? 'Remove Saved Plan' : 'Save Travel Plan',
+                  icon: Icon(
+                    isSaved
+                        ? Icons.bookmark_rounded
+                        : Icons.bookmark_border_rounded,
+                    color: isSaved ? AppColors.accentGold : AppColors.primary,
+                  ),
+                  onPressed: () async {
+                    await UserActivityController.instance.togglePlanSaved(
+                      currentPlan.id,
+                    );
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            isSaved
+                                ? 'Removed "${currentPlan.title}" from Saved Plans.'
+                                : 'Saved "${currentPlan.title}" to Saved Travel Plans.',
+                          ),
+                          duration: const Duration(seconds: 2),
+                        ),
+                      );
+                    }
+                  },
+                );
+              },
+            ),
+        ],
       ),
       body: _isLoading
           ? const Center(
@@ -168,154 +227,11 @@ class _PlanDetailView extends StatelessWidget {
 
   const _PlanDetailView({required this.plan, required this.onPlaceTap});
 
-  void _showGoogleMapsRouteModal(BuildContext context) {
+  void _launchGoogleMapsRoute() {
     final url = plan.qrNavigationUrl;
-    if (url == null) return;
-
-    showModalBottomSheet<void>(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: AppColors.surface,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-      ),
-      builder: (ctx) {
-        return Padding(
-          padding: EdgeInsets.fromLTRB(
-            24,
-            16,
-            24,
-            MediaQuery.of(ctx).viewInsets.bottom + 28,
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Container(
-                  width: 44,
-                  height: 5,
-                  decoration: BoxDecoration(
-                    color: AppColors.border,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 18),
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: AppColors.primary.withValues(alpha: 0.12),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      Icons.map_rounded,
-                      color: AppColors.primary,
-                      size: 24,
-                    ),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Google Maps Route',
-                          style: AppTextStyles.title,
-                        ),
-                        Text(
-                          'Official verified itinerary route link',
-                          style: AppTextStyles.bodySecondary.copyWith(
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: AppColors.surfaceVariant,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppColors.border),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.verified_outlined,
-                          size: 16,
-                          color: AppColors.success,
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          'Verified QR Destination',
-                          style: AppTextStyles.label.copyWith(
-                            color: AppColors.success,
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 6),
-                    SelectableText(
-                      url,
-                      style: AppTextStyles.body.copyWith(
-                        fontSize: 13,
-                        color: AppColors.primaryDark,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                'This route coordinates all ${plan.totalStopsCount} stops across ${plan.durationDays} ${plan.durationDays == 1 ? "day" : "days"} as mapped in the official tourism route map.',
-                style: AppTextStyles.bodySecondary.copyWith(fontSize: 12),
-              ),
-              const SizedBox(height: 20),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    Clipboard.setData(ClipboardData(text: url));
-                    Navigator.of(ctx).pop();
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: const Text(
-                          'Google Maps route URL copied to clipboard!',
-                        ),
-                        duration: const Duration(seconds: 3),
-                        action: SnackBarAction(label: 'OK', onPressed: () {}),
-                      ),
-                    );
-                  },
-                  icon: const Icon(Icons.copy_rounded, size: 18),
-                  label: const Text('Copy Route Link'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primary,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
+    if (url != null && url.isNotEmpty) {
+      UrlLauncherHelper.openUrl(url);
+    }
   }
 
   void _openFullscreenRouteImage(BuildContext context) {
@@ -518,7 +434,7 @@ class _PlanDetailView extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () => _showGoogleMapsRouteModal(context),
+                  onPressed: _launchGoogleMapsRoute,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: AppColors.primaryDark,
@@ -594,12 +510,14 @@ class _PlanDetailView extends StatelessWidget {
             children: [
               Positioned.fill(
                 child: InteractiveViewer(
+                  key: ValueKey(plan.routeReferenceAsset),
                   minScale: 1.0,
                   maxScale: 4.0,
                   clipBehavior: Clip.antiAlias,
                   child: Center(
                     child: Image.asset(
                       plan.routeReferenceAsset,
+                      key: ValueKey('img_${plan.routeReferenceAsset}'),
                       fit: BoxFit.contain,
                       errorBuilder: (context, error, stackTrace) {
                         return Center(

@@ -43,6 +43,8 @@ class Place {
   final String? village;
   final String? taluka;
   final String? district;
+  final String? secondaryMapsUrl;
+  final String? secondaryMapsLabel;
 
   String get description => historicalOverview;
 
@@ -68,6 +70,8 @@ class Place {
     this.visitingTimings,
     this.howToReach,
     this.mapsUrl,
+    this.secondaryMapsUrl,
+    this.secondaryMapsLabel,
     this.imageCaptions = const {},
     this.bookingUrl,
     this.touristFootfall,
@@ -98,6 +102,8 @@ class Place {
     String? visitingTimings,
     HowToReach? howToReach,
     String? mapsUrl,
+    String? secondaryMapsUrl,
+    String? secondaryMapsLabel,
     Map<String, String>? imageCaptions,
     String? bookingUrl,
     String? touristFootfall,
@@ -131,6 +137,8 @@ class Place {
       visitingTimings: visitingTimings ?? this.visitingTimings,
       howToReach: howToReach ?? this.howToReach,
       mapsUrl: mapsUrl ?? this.mapsUrl,
+      secondaryMapsUrl: secondaryMapsUrl ?? this.secondaryMapsUrl,
+      secondaryMapsLabel: secondaryMapsLabel ?? this.secondaryMapsLabel,
       imageCaptions: imageCaptions ?? this.imageCaptions,
       bookingUrl: bookingUrl ?? this.bookingUrl,
       touristFootfall: touristFootfall ?? this.touristFootfall,

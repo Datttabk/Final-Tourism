@@ -18,171 +18,6 @@ class HotelCard extends StatelessWidget {
 
   const HotelCard({super.key, required this.hotel, this.onNavigate});
 
-  void _showGoogleMapsModal(BuildContext context) {
-    if (hotel.mapsUrl == null) return;
-    final url = hotel.mapsUrl!;
-
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: AppColors.surface,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (ctx) {
-        return Padding(
-          padding: EdgeInsets.fromLTRB(
-            24,
-            16,
-            24,
-            MediaQuery.of(ctx).viewInsets.bottom + 28,
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Container(
-                  width: 44,
-                  height: 5,
-                  decoration: BoxDecoration(
-                    color: AppColors.border,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 18),
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: AppColors.primary.withValues(alpha: 0.12),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      Icons.map_rounded,
-                      color: AppColors.primary,
-                      size: 24,
-                    ),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          hotel.name,
-                          style: AppTextStyles.title,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        Text(
-                          'Verified Google Maps Destination',
-                          style: AppTextStyles.bodySecondary.copyWith(
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: AppColors.surfaceVariant,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppColors.border),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.verified_outlined,
-                          size: 16,
-                          color: AppColors.success,
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          'Google Maps Place Link',
-                          style: AppTextStyles.label.copyWith(
-                            color: AppColors.success,
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 6),
-                    SelectableText(
-                      url,
-                      style: AppTextStyles.body.copyWith(
-                        fontSize: 13,
-                        color: AppColors.primaryDark,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 20),
-              Row(
-                children: [
-                  Expanded(
-                    child: OutlinedButton.icon(
-                      onPressed: () {
-                        Clipboard.setData(ClipboardData(text: url));
-                        Navigator.of(ctx).pop();
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'Google Maps link for ${hotel.name} copied to clipboard!',
-                            ),
-                            duration: const Duration(seconds: 3),
-                          ),
-                        );
-                      },
-                      icon: const Icon(Icons.copy_rounded, size: 16),
-                      label: const Text('Copy Maps Link'),
-                      style: OutlinedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: ElevatedButton.icon(
-                      onPressed: () {
-                        Navigator.of(ctx).pop();
-                        UrlLauncherHelper.openUrl(url);
-                      },
-                      icon: const Icon(Icons.open_in_new, size: 16),
-                      label: const Text('Open in Maps'),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.primary,
-                        foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
   void _showNavigationHandoff(BuildContext context) {
     showDialog(
       context: context,
@@ -396,33 +231,25 @@ class HotelCard extends StatelessWidget {
                   ),
                 ],
 
-                // Contact Person & Phone
-                if (hotel.contactPerson.isNotEmpty || hotel.hasPhoneNumber) ...[
+                // Official Hotel Phone Number (Owner/contact person personal details hidden for privacy)
+                if (hotel.hasPhoneNumber) ...[
                   const SizedBox(height: 14),
                   _detailSection(
-                    icon: Icons.person_outline,
+                    icon: Icons.phone_outlined,
                     title: 'Contact Information',
-                    content: [
-                      if (hotel.contactPerson.isNotEmpty)
-                        'Contact: ${hotel.contactPerson}',
-                      if (hotel.hasPhoneNumber) 'Phone: ${hotel.phoneNumber}',
-                    ].join('\n'),
-                    actionWidget: hotel.hasPhoneNumber
-                        ? IconButton(
-                            icon: const Icon(Icons.copy, size: 18),
-                            tooltip: 'Copy Phone',
-                            onPressed: () {
-                              Clipboard.setData(
-                                ClipboardData(text: hotel.phoneNumber),
-                              );
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Phone number copied!'),
-                                ),
-                              );
-                            },
-                          )
-                        : null,
+                    content: 'Phone: ${hotel.phoneNumber}',
+                    actionWidget: IconButton(
+                      icon: const Icon(Icons.copy, size: 18),
+                      tooltip: 'Copy Phone',
+                      onPressed: () {
+                        Clipboard.setData(
+                          ClipboardData(text: hotel.phoneNumber),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Phone number copied!')),
+                        );
+                      },
+                    ),
                   ),
                 ],
 
@@ -534,7 +361,7 @@ class HotelCard extends StatelessWidget {
               ],
             ),
           ),
-          if (actionWidget != null) actionWidget,
+          ?actionWidget,
         ],
       ),
     );

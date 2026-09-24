@@ -9,12 +9,14 @@ import '../../domain/models/craft_specialty.dart';
 import '../../domain/models/cuisine_entry.dart';
 import '../../domain/models/discover_item.dart';
 import '../../domain/models/hotel.dart';
+import '../../domain/models/tanga_ride.dart';
 import '../../domain/models/tourist_guide.dart';
 import '../widgets/bazaar_market_card.dart';
 import '../widgets/craft_specialty_card.dart';
 import '../widgets/cuisine_card.dart';
 import '../widgets/guide_card.dart';
 import '../widgets/hotel_card.dart';
+import '../widgets/tanga_ride_card.dart';
 
 enum BazaarFilter { all, markets, crafts }
 
@@ -42,6 +44,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
   List<BazaarMarket> _bazaars = [];
   List<CraftSpecialty> _crafts = [];
   List<CuisineEntry> _cuisines = [];
+  List<TangaRide> _tangaRides = [];
 
   bool _isLoading = true;
   String _searchQuery = '';
@@ -104,6 +107,17 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           _isLoading = false;
         });
         break;
+
+      case DiscoverCategory.tanga:
+        final tangaRides = await _repository.getTangaRides(
+          searchQuery: _searchQuery,
+        );
+        if (!mounted) return;
+        setState(() {
+          _tangaRides = tangaRides;
+          _isLoading = false;
+        });
+        break;
     }
   }
 
@@ -140,6 +154,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
         return l10n.searchBazaars;
       case DiscoverCategory.guides:
         return l10n.searchGuides;
+      case DiscoverCategory.tanga:
+        return l10n.searchTanga;
     }
   }
 
@@ -153,6 +169,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
         return l10n.bazaarsAndCraft;
       case DiscoverCategory.guides:
         return l10n.touristGuides;
+      case DiscoverCategory.tanga:
+        return l10n.tangaRides;
     }
   }
 
@@ -176,7 +194,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
       ),
       body: Column(
         children: [
-          // 4 Primary Category Selector Tabs
+          // 5 Primary Category Selector Tabs
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
             child: SingleChildScrollView(
@@ -315,6 +333,16 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                       _searchQuery.isEmpty
                           ? 'All ${_guides.length} Registered Tourist Guides'
                           : '${_guides.length} ${_guides.length == 1 ? "guide" : "guides"} found',
+                      style: AppTextStyles.label.copyWith(
+                        fontSize: 12,
+                        color: AppColors.textSecondary,
+                      ),
+                    )
+                  else if (_selectedCategory == DiscoverCategory.tanga)
+                    Text(
+                      _searchQuery.isEmpty
+                          ? 'All ${_tangaRides.length} Registered Tanga Ride Providers'
+                          : '${_tangaRides.length} ${_tangaRides.length == 1 ? "provider" : "providers"} found',
                       style: AppTextStyles.label.copyWith(
                         fontSize: 12,
                         color: AppColors.textSecondary,
@@ -491,6 +519,21 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           itemCount: _guides.length,
           separatorBuilder: (context, index) => const SizedBox(height: 14),
           itemBuilder: (context, index) => GuideCard(guide: _guides[index]),
+        );
+
+      case DiscoverCategory.tanga:
+        if (_tangaRides.isEmpty) {
+          return _buildEmptyState(
+            icon: Icons.emoji_transportation_outlined,
+            message: 'No tanga ride providers found matching "$_searchQuery"',
+          );
+        }
+        return ListView.separated(
+          padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
+          itemCount: _tangaRides.length,
+          separatorBuilder: (context, index) => const SizedBox(height: 14),
+          itemBuilder: (context, index) =>
+              TangaRideCard(tanga: _tangaRides[index]),
         );
     }
   }

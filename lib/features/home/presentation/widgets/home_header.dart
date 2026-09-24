@@ -44,16 +44,87 @@ class HomeHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Karnataka Department of Tourism Official Logo
-          Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Image.asset(
-              'assets/images/branding/karnataka_tourism_logo.png',
-              height: 38,
-              fit: BoxFit.contain,
-              alignment: Alignment.centerLeft,
-              errorBuilder: (context, error, stackTrace) =>
-                  const SizedBox.shrink(),
+          // Official Institutional Header: 3 Logos
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            margin: const EdgeInsets.only(bottom: 14),
+            decoration: BoxDecoration(
+              color: AppColors.surface,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: AppColors.border),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.03),
+                  blurRadius: 6,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final isCompact = constraints.maxWidth < 360;
+                final logoHeight = isCompact ? 36.0 : 44.0;
+
+                return SizedBox(
+                  height: logoHeight,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      // LEFT: Vijayapura Tourism / Discover Vijayapura artwork
+                      Expanded(
+                        flex: 3,
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(6),
+                            child: Image.asset(
+                              'assets/images/branding/vijayapura_tourism_logo.jpg',
+                              height: logoHeight,
+                              fit: BoxFit.contain,
+                              errorBuilder: (context, error, stackTrace) =>
+                                  const SizedBox.shrink(),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+
+                      // CENTER: Karnataka Tourism logo (central identity, wider flex)
+                      Expanded(
+                        flex: 5,
+                        child: Center(
+                          child: Image.asset(
+                            'assets/images/branding/karnataka_tourism_logo.png',
+                            height: logoHeight,
+                            fit: BoxFit.contain,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const SizedBox.shrink(),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+
+                      // RIGHT: BLDEACET logo
+                      Expanded(
+                        flex: 3,
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(6),
+                            child: Image.asset(
+                              'assets/images/branding/bldeacet_logo.jpg',
+                              height: logoHeight,
+                              fit: BoxFit.contain,
+                              errorBuilder: (context, error, stackTrace) =>
+                                  const SizedBox.shrink(),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
             ),
           ),
           Row(
@@ -88,6 +159,7 @@ class HomeHeader extends StatelessWidget {
 
               // Language Selector Button
               GestureDetector(
+                behavior: HitTestBehavior.opaque,
                 onTap: () => showLanguageSelectionModal(context),
                 child: Container(
                   padding: const EdgeInsets.symmetric(
@@ -136,6 +208,7 @@ class HomeHeader extends StatelessWidget {
 
               // Profile Button
               GestureDetector(
+                behavior: HitTestBehavior.opaque,
                 onTap: onProfileTap,
                 child: Container(
                   width: 38,

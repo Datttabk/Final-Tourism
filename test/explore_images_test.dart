@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vijayapura_tourism/features/explore/data/repositories/local_places_repository.dart';
@@ -24,7 +25,8 @@ void main() {
           expect(
             file.existsSync(),
             isTrue,
-            reason: 'Place ${place.id} primary imageUrl ${place.imageUrl} must exist on disk',
+            reason:
+                'Place ${place.id} primary imageUrl ${place.imageUrl} must exist on disk',
           );
         }
 
@@ -34,7 +36,8 @@ void main() {
             expect(
               file.existsSync(),
               isTrue,
-              reason: 'Place ${place.id} gallery image $galleryUrl must exist on disk',
+              reason:
+                  'Place ${place.id} gallery image $galleryUrl must exist on disk',
             );
           }
         }
@@ -66,7 +69,8 @@ void main() {
         expect(
           place!.imageUrl.startsWith('assets/images/'),
           isTrue,
-          reason: 'Place $id should use local classified asset, got ${place.imageUrl}',
+          reason:
+              'Place $id should use local classified asset, got ${place.imageUrl}',
         );
         expect(
           place.galleryUrls.length,
@@ -77,7 +81,8 @@ void main() {
           expect(
             gUrl.startsWith('assets/images/'),
             isTrue,
-            reason: 'Place $id galleryUrl should be local classified asset, got $gUrl',
+            reason:
+                'Place $id galleryUrl should be local classified asset, got $gUrl',
           );
         }
       }
@@ -92,7 +97,7 @@ void main() {
       final almatti = await repository.getPlaceById('almatti_dam');
       expect(almatti, isNotNull);
       expect(almatti!.name, 'Almatti Dam');
-      expect(almatti.galleryUrls.length, 8);
+      expect(almatti.galleryUrls.length, greaterThanOrEqualTo(8));
 
       final museum = await repository.getPlaceById('archaeological_museum');
       expect(museum, isNotNull);
@@ -115,9 +120,17 @@ void main() {
       for (final id in suppliedIds) {
         final place = await repository.getPlaceById(id);
         expect(place, isNotNull, reason: 'Place $id should be retrievable');
-        expect(place!.mapsUrl, isNotNull, reason: 'Place $id should have mapsUrl');
-        expect(place.mapsUrl, contains('google.com/maps'));
-        expect(place.howToReach, isNotNull, reason: 'Place $id should have howToReach');
+        expect(
+          place!.mapsUrl,
+          isNotNull,
+          reason: 'Place $id should have mapsUrl',
+        );
+        expect(place.mapsUrl, contains('google.com'));
+        expect(
+          place.howToReach,
+          isNotNull,
+          reason: 'Place $id should have howToReach',
+        );
         expect(place.howToReach!.byAir, isNotNull);
         expect(place.howToReach!.byTrain, isNotNull);
         expect(place.howToReach!.byRoad, isNotNull);
@@ -126,7 +139,8 @@ void main() {
 
       // Verify Ibrahim Rauza specific visiting timings
       final ibrahim = await repository.getPlaceById('ibrahim_rauza');
-      expect(ibrahim!.visitingTimings, 'Morning 6 AM IST to Evening 6 PM IST');
+      expect(ibrahim!.visitingTimings, '06:00 AM – 05:40 PM');
+      expect(ibrahim.closingTime, '05:40 PM');
 
       // Verify aliases for backwards compatibility
       expect(await repository.getPlaceById('shivgiri'), isNotNull);

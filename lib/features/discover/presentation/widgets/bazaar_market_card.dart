@@ -33,6 +33,31 @@ class BazaarMarketCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Store / Market Image if present
+            if (market.imageUrl != null && market.imageUrl!.isNotEmpty) ...[
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: Image.asset(
+                    market.imageUrl!,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => Container(
+                      color: AppColors.surfaceVariant,
+                      child: const Center(
+                        child: Icon(
+                          Icons.storefront_rounded,
+                          color: AppColors.textSecondary,
+                          size: 36,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 14),
+            ],
+
             // Top Row: Icon + Market Name
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,72 +114,121 @@ class BazaarMarketCard extends StatelessWidget {
             ),
             const SizedBox(height: 14),
 
-            // Exact Location / Address
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 2),
-                  child: Icon(
-                    Icons.location_on_outlined,
-                    size: 16,
-                    color: AppColors.primary,
-                  ),
+            // Description if available (e.g. Smarnika)
+            if (market.description != null &&
+                market.description!.isNotEmpty) ...[
+              Text(
+                market.description!,
+                style: AppTextStyles.bodySecondary.copyWith(
+                  fontSize: 13,
+                  height: 1.45,
+                  color: AppColors.textPrimary,
                 ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Text(
-                    market.address,
-                    style: AppTextStyles.bodySecondary.copyWith(
-                      fontSize: 13,
-                      height: 1.4,
-                      color: AppColors.textPrimary,
+              ),
+              const SizedBox(height: 12),
+            ],
+
+            // Exact Location / Address if available
+            if (market.address != null && market.address!.isNotEmpty) ...[
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(top: 2),
+                    child: Icon(
+                      Icons.location_on_outlined,
+                      size: 16,
+                      color: AppColors.primary,
                     ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      market.address!,
+                      style: AppTextStyles.bodySecondary.copyWith(
+                        fontSize: 13,
+                        height: 1.4,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+            ],
 
-            // Landmark & Pincode
-            Row(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 1),
-                  child: Icon(
-                    Icons.flag_outlined,
-                    size: 15,
+            // Landmark & Pincode if available
+            if ((market.landmark != null && market.landmark!.isNotEmpty) ||
+                (market.pincode != null && market.pincode!.isNotEmpty)) ...[
+              Row(
+                children: [
+                  if (market.landmark != null &&
+                      market.landmark!.isNotEmpty) ...[
+                    const Padding(
+                      padding: EdgeInsets.only(top: 1),
+                      child: Icon(
+                        Icons.flag_outlined,
+                        size: 15,
+                        color: AppColors.textSecondary,
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        'Landmark: ${market.landmark}',
+                        style: AppTextStyles.bodySecondary.copyWith(
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ] else
+                    const Spacer(),
+                  if (market.pincode != null && market.pincode!.isNotEmpty)
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 6,
+                        vertical: 2,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.surfaceVariant,
+                        borderRadius: BorderRadius.circular(4),
+                        border: Border.all(color: AppColors.border),
+                      ),
+                      child: Text(
+                        'PIN ${market.pincode}',
+                        style: AppTextStyles.label.copyWith(
+                          fontSize: 10,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+              const SizedBox(height: 12),
+            ],
+
+            if ((market.address == null || market.address!.isEmpty) &&
+                (market.landmark == null || market.landmark!.isEmpty)) ...[
+              Row(
+                children: [
+                  const Icon(
+                    Icons.info_outline_rounded,
+                    size: 14,
                     color: AppColors.textSecondary,
                   ),
-                ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Text(
-                    'Landmark: ${market.landmark}',
-                    style: AppTextStyles.bodySecondary.copyWith(fontSize: 12),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 6,
-                    vertical: 2,
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.surfaceVariant,
-                    borderRadius: BorderRadius.circular(4),
-                    border: Border.all(color: AppColors.border),
-                  ),
-                  child: Text(
-                    'PIN ${market.pincode}',
-                    style: AppTextStyles.label.copyWith(
-                      fontSize: 10,
-                      color: AppColors.textSecondary,
+                  const SizedBox(width: 6),
+                  Text(
+                    'Location details pending verification',
+                    style: AppTextStyles.bodySecondary.copyWith(
+                      fontSize: 11,
+                      fontStyle: FontStyle.italic,
                     ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
+                ],
+              ),
+              const SizedBox(height: 12),
+            ],
+
             const Divider(height: 1, color: AppColors.border),
             const SizedBox(height: 10),
 

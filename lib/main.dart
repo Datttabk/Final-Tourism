@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/localization/konkani_material_localizations.dart';
 import 'core/localization/locale_controller.dart';
 import 'core/routing/app_router.dart';
+import 'core/services/user_activity_controller.dart';
 import 'core/theme/app_theme.dart';
 import 'core/utils/web_plugins.dart';
 import 'firebase_options.dart';
@@ -18,6 +19,9 @@ Future<void> main() async {
 
   // Initialize persistent locale preference before app renders
   await LocaleController.instance.initialize();
+
+  // Initialize persistent user bookmarks, saved plans, and recently viewed
+  await UserActivityController.instance.initialize();
 
   try {
     await Firebase.initializeApp(

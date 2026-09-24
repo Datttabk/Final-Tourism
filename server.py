@@ -24,8 +24,19 @@ def get_file_from_cache(raw_path):
             return CACHE[raw_path]
 
     safe_rel = raw_path.lstrip('/')
-    full_path = os.path.join(WEB_DIR, safe_rel)
-    if os.path.isfile(full_path):
+    candidate_paths = [os.path.join(WEB_DIR, safe_rel)]
+    if safe_rel.startswith('assets/assets/'):
+        candidate_paths.append(os.path.join(WEB_DIR, 'assets', safe_rel[14:]))
+    elif safe_rel.startswith('assets/'):
+        candidate_paths.append(os.path.join(WEB_DIR, 'assets', 'assets', safe_rel[7:]))
+
+    full_path = None
+    for cp in candidate_paths:
+        if os.path.isfile(cp):
+            full_path = cp
+            break
+
+    if full_path and os.path.isfile(full_path):
         try:
             with open(full_path, 'rb') as f:
                 content = f.read()

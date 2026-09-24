@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/localization/l10n_extensions.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../discover/data/repositories/local_discover_repository.dart';
 
 /// Compact preview section for Discover categories on the Home screen.
 class HomeDiscoverPreview extends StatelessWidget {
@@ -13,26 +14,28 @@ class HomeDiscoverPreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final discoverRepo = LocalDiscoverRepository();
 
     final categories = [
       _DiscoverCategoryItem(
         title: l10n.hotelsAndStay,
-        subtitle: '37 verified stays',
+        subtitle: '${discoverRepo.hotelsCount} verified stays',
         icon: Icons.hotel_rounded,
       ),
       _DiscoverCategoryItem(
         title: l10n.localCuisine,
-        subtitle: '6 culinary hubs',
+        subtitle: '${discoverRepo.cuisinesCount} culinary hubs',
         icon: Icons.restaurant_rounded,
       ),
       _DiscoverCategoryItem(
         title: l10n.bazaarsAndCraft,
-        subtitle: '8 markets & 5 crafts',
+        subtitle:
+            '${discoverRepo.bazaarsCount} markets & ${discoverRepo.craftsCount} crafts',
         icon: Icons.storefront_rounded,
       ),
       _DiscoverCategoryItem(
         title: l10n.touristGuides,
-        subtitle: '7 certified guides',
+        subtitle: '${discoverRepo.guidesCount} certified guides',
         icon: Icons.person_pin_rounded,
       ),
     ];

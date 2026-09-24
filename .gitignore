@@ -29,3 +29,10 @@ coverage/
 # Firebase / service account secrets
 service-account*.json
 firebase-adminsdk*.json
+
+# Ephemeral build artifacts & logs
+ios/Flutter/ephemeral/
+macos/Flutter/ephemeral/
+flutter_*.log
+scratch/
+

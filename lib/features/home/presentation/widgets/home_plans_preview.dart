@@ -6,9 +6,14 @@ import '../../../../core/theme/app_text_styles.dart';
 
 /// Compact preview section for Curated Travel Plans on the Home screen.
 class HomePlansPreview extends StatelessWidget {
+  final ValueChanged<int>? onPlanTap;
   final VoidCallback onViewAllTap;
 
-  const HomePlansPreview({super.key, required this.onViewAllTap});
+  const HomePlansPreview({
+    super.key,
+    this.onPlanTap,
+    required this.onViewAllTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +107,13 @@ class HomePlansPreview extends StatelessWidget {
             itemBuilder: (context, index) {
               final plan = plans[index];
               return InkWell(
-                onTap: onViewAllTap,
+                onTap: () {
+                  if (onPlanTap != null) {
+                    onPlanTap!(index);
+                  } else {
+                    onViewAllTap();
+                  }
+                },
                 borderRadius: BorderRadius.circular(14),
                 child: Container(
                   width: 200,

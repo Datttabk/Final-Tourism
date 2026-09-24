@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>295311273500-sg9hv53f6d1imk3cddb1gmfa7msvdrnh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.295311273500-sg9hv53f6d1imk3cddb1gmfa7msvdrnh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDD2wvnSmaX8li0xZUKgofLl4iFgBAF9hk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>295311273500</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vijayapura.tourism.vijayapuraTourism</string>
+	<key>PROJECT_ID</key>
+	<string>vijayapura-tourism-40f3b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>vijayapura-tourism-40f3b.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:295311273500:ios:201e3a58ad2260fcf739d9</string>
+</dict>
+</plist>

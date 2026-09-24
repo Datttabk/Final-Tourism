@@ -289,6 +289,9 @@ class AppLocalizationsKok extends AppLocalizations {
   String get touristGuides => 'टूरिस्ट गाईड';
 
   @override
+  String get tangaRides => 'तांगा प्रवास';
+
+  @override
   String get searchHotels => 'हॉटेल वा थळ शोधा...';
 
   @override
@@ -299,6 +302,9 @@ class AppLocalizationsKok extends AppLocalizations {
 
   @override
   String get searchGuides => 'गाईड वा भास शोधा...';
+
+  @override
+  String get searchTanga => 'तांगा प्रवास सोदात...';
 
   @override
   String get googleMaps => 'गुगल मॅप्स';

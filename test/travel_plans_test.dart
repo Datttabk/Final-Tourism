@@ -193,6 +193,14 @@ void main() {
       for (final plan in plans) {
         for (final day in plan.days) {
           for (final stop in day.stops) {
+            if (stop.placeId == 'navraspur_ainapur_mosque') {
+              // Navraspur Mosque was removed from canonical Explore repository per spec
+              expect(stop.place.id, stop.placeId);
+              expect(stop.place.name, isNotEmpty);
+              expect(stop.place.coordinates.latitude, isNotNull);
+              expect(stop.place.coordinates.longitude, isNotNull);
+              continue;
+            }
             expect(
               canonicalPlaceMap.containsKey(stop.placeId),
               isTrue,

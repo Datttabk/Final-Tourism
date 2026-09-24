@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/services/plans_nav_controller.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/widgets/main_shell_screen.dart';
 import '../../../explore/data/repositories/local_places_repository.dart';
@@ -81,6 +82,11 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  void _openPlan(int planIndex) {
+    PlansNavController.selectPlan(planIndex);
+    _switchToTab(2);
+  }
+
   @override
   Widget build(BuildContext context) {
     String? displayName;
@@ -128,6 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     // 4. Featured Travel Plans Preview
                     HomePlansPreview(
+                      onPlanTap: _openPlan,
                       onViewAllTap: () => _switchToTab(2), // Tab 2: Plans
                     ),
                     const SizedBox(height: 24),

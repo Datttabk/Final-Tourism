@@ -3,6 +3,7 @@ import '../../domain/models/craft_specialty.dart';
 import '../../domain/models/cuisine_entry.dart';
 import '../../domain/models/discover_item.dart';
 import '../../domain/models/hotel.dart';
+import '../../domain/models/tanga_ride.dart';
 import '../../domain/models/tourist_guide.dart';
 
 /// Repository for the Discover module in Vijayapura Tourism.
@@ -23,8 +24,10 @@ class LocalDiscoverRepository {
       address: 'Beside Sukoon Colony, Off Athani-Solapur Ring Road, Vijaypura, Karnataka- 586103',
       taluka: 'Vijayapur',
       district: 'Vijayapur',
-      mapsSourceValue: 'https://www.spoorti.in/',
-      mapsUrl: 'https://www.spoorti.in/',
+      mapsSourceValue:
+          'https://www.google.com/maps/place/?q=place_id:ChIJIamuXsf_xjsRYRTsjguGCmU',
+      mapsUrl:
+          'https://www.google.com/maps/place/?q=place_id:ChIJIamuXsf_xjsRYRTsjguGCmU',
       numberOfGuestRooms: '22',
       amenities: 'Conference Room, Convention Hall, Gym, Spa, Swimming Pool, Restaurant, Coffee Shop, etc',
       contactPerson:
@@ -61,15 +64,17 @@ class LocalDiscoverRepository {
       address: 'Hotel Le Grande\n Athani Road Afzalpur Takke, Vijayapura 586102 India',
       taluka: 'Vijayapur',
       district: 'Vijayapur',
-      mapsSourceValue: 'Le Grande – Unpretentiously Luxurious',
-      mapsUrl: null,
+      mapsSourceValue:
+          'https://www.google.com/maps/place/?q=place_id:ChIJayC0iqj_xjsRlM4BiTZ8iQA',
+      mapsUrl:
+          'https://www.google.com/maps/place/?q=place_id:ChIJayC0iqj_xjsRlM4BiTZ8iQA',
       numberOfGuestRooms: '30',
       amenities: 'Conference Room, Convention Hall, Restaurant etc',
       contactPerson: 'Owner Tejas Shetty -7353476476',
       phoneNumber: '8884476476, 7090476476,',
       email: 'bookings@legrande.in',
       nearestTouristDestination: 'Golgumbaz, Ibrahim rouza, Baraha kaman',
-      isApproximateLocation: true,
+      isApproximateLocation: false,
     ),
     Hotel(
       id: 'hotel_4',
@@ -79,8 +84,10 @@ class LocalDiscoverRepository {
       address: 'Hotel Town Palace , Athani Road, Vijayapura, Karnataka',
       taluka: 'Vijayapur',
       district: 'Vijayapur',
-      mapsSourceValue: 'https://maps.app.goo.gl/nKLxH8gVrB9JZFGYA',
-      mapsUrl: 'https://maps.app.goo.gl/nKLxH8gVrB9JZFGYA',
+      mapsSourceValue:
+          'https://www.google.com/maps/place/?q=place_id:ChIJV6piAKf_xjsR3aMM_WRugiE',
+      mapsUrl:
+          'https://www.google.com/maps/place/?q=place_id:ChIJV6piAKf_xjsR3aMM_WRugiE',
       numberOfGuestRooms: '29',
       amenities: 'Conference Room, Convention Hall, Gym, Spa, Swimming Pool, Restaurant.',
       contactPerson:
@@ -98,15 +105,17 @@ class LocalDiscoverRepository {
       address: 'Hotel Kyrad, ward.no:07, opp. MRF Show room, Station Road\n Vijayapura-586101',
       taluka: 'Vijayapur',
       district: 'Vijayapur',
-      mapsSourceValue: 'kyriad hotel bijapur - Search (bing.com)',
-      mapsUrl: null,
+      mapsSourceValue:
+          'https://www.google.com/maps/place/?q=place_id:ChIJI1zj-wBVxjsRZmfeqpt6vzc',
+      mapsUrl:
+          'https://www.google.com/maps/place/?q=place_id:ChIJI1zj-wBVxjsRZmfeqpt6vzc',
       numberOfGuestRooms: '37',
       amenities: 'Conference Room, Restaurant.',
       contactPerson: ', Owner -Nagaraj patil- 9845308168',
       phoneNumber: '08352-254242, 9380902500',
       email: 'reservations.vijayapura@kyriadindia.com',
       nearestTouristDestination: 'Golgumbaz, Ibrahim rouza, Baraha kaman',
-      isApproximateLocation: true,
+      isApproximateLocation: false,
     ),
     Hotel(
       id: 'hotel_6',
@@ -116,15 +125,17 @@ class LocalDiscoverRepository {
       address: 'Hotel Mayura Adil Shahi \n A Unit of KSTDC\n Anand Mahal Road, Ambedkar circle, Vijayapura-586101',
       taluka: 'Vijayapur',
       district: 'Vijayapur',
-      mapsSourceValue: 'KSTDC - Official website of Karnataka State Tourism Development Corporation',
-      mapsUrl: null,
+      mapsSourceValue:
+          'https://www.google.com/maps/place/?q=place_id:ChIJK58CJXlVxjsRsfZk7YccLFc',
+      mapsUrl:
+          'https://www.google.com/maps/place/?q=place_id:ChIJK58CJXlVxjsRsfZk7YccLFc',
       numberOfGuestRooms: '21',
       amenities: 'Restaurant.',
       contactPerson: 'Manager',
       phoneNumber: '08352-250401, 89706500031, Manager -9611872565',
       email: 'bijapur@karnatakaholidays.net',
       nearestTouristDestination: 'Golgumbaz, Ibrahim rouza, Baraha kaman',
-      isApproximateLocation: true,
+      isApproximateLocation: false,
     ),
     Hotel(
       id: 'hotel_7',
@@ -1176,8 +1187,19 @@ class LocalDiscoverRepository {
     ),
   ];
 
-  // Master Traditional Bazaars & Commercial Markets Dataset (Exactly 8 records)
+  // Master Traditional Bazaars & Commercial Markets Dataset (Smarnika + 8 markets = 9 records)
   static const List<BazaarMarket> _bazaars = [
+    BazaarMarket(
+      id: 'bazaar_smarnika',
+      name: 'Smarnika',
+      category: 'Souvenirs & Heritage Memorabilia',
+      description:
+          'Smarnika is a shop where visitors can find collections related to Gol Gumbaz history, photographs, and related souvenir/memory collections.',
+      address: 'Within Gol Gumbaz Monument Premises',
+      landmark: 'Gol Gumbaz Tourism Area',
+      pincode: '586104',
+      imageUrl: 'assets/images/discover/smarnika.png',
+    ),
     BazaarMarket(
       id: 'bazaar_1',
       name: 'Gandhi Chowk',
@@ -1326,6 +1348,40 @@ class LocalDiscoverRepository {
     ),
   ];
 
+  // Master Tanga Ride Service Providers Dataset (Exactly 5 providers supplied by product owner)
+  static const List<TangaRide> _tangaRides = [
+    TangaRide(
+      id: 'tanga_1',
+      nameEn: 'Rehmankhan Rasheedkhan Hakim',
+      nameKn: 'ರಹಿಮಾನಖಾನ ರಶೀದಖಾನ. ಹಕಿಂ',
+      contactNumber: '9731579908',
+    ),
+    TangaRide(
+      id: 'tanga_2',
+      nameEn: 'Jameel Harunrasheed Jamadar',
+      nameKn: 'ಜಮೀಲ. ಹಾರುನರಶೀದ ಜಮಾದಾರ',
+      contactNumber: '9611616785',
+    ),
+    TangaRide(
+      id: 'tanga_3',
+      nameEn: 'Ravi',
+      nameKn: 'ರವಿ.',
+      contactNumber: '7760847640',
+    ),
+    TangaRide(
+      id: 'tanga_4',
+      nameEn: 'Gujju Danga',
+      nameKn: 'ಗುಜ್ಜು ಡಾಂಗ',
+      contactNumber: '9945940536',
+    ),
+    TangaRide(
+      id: 'tanga_5',
+      nameEn: 'Mudakappa',
+      nameKn: 'ಮುದಕಪ್ಪ',
+      contactNumber: '9845479974',
+    ),
+  ];
+
   /// Fetch all hotels, optionally filtered by search term.
   /// Searches across hotel name and address.
   Future<List<Hotel>> getHotels({String? searchQuery}) async {
@@ -1378,8 +1434,10 @@ class LocalDiscoverRepository {
     return _bazaars.where((bazaar) {
       final nameMatches = bazaar.name.toLowerCase().contains(query);
       final catMatches = bazaar.category.toLowerCase().contains(query);
-      final addressMatches = bazaar.address.toLowerCase().contains(query);
-      final landmarkMatches = bazaar.landmark.toLowerCase().contains(query);
+      final addressMatches =
+          bazaar.address?.toLowerCase().contains(query) ?? false;
+      final landmarkMatches =
+          bazaar.landmark?.toLowerCase().contains(query) ?? false;
       return nameMatches || catMatches || addressMatches || landmarkMatches;
     }).toList();
   }
@@ -1419,10 +1477,34 @@ class LocalDiscoverRepository {
     }).toList();
   }
 
+  /// Fetch all Tanga Ride providers, optionally filtered by search term.
+  /// Searches across English name, Kannada name, and contact number.
+  Future<List<TangaRide>> getTangaRides({String? searchQuery}) async {
+    if (searchQuery == null || searchQuery.trim().isEmpty) {
+      return List.unmodifiable(_tangaRides);
+    }
+
+    final query = searchQuery.trim().toLowerCase();
+    return _tangaRides.where((tanga) {
+      final nameEnMatches = tanga.nameEn.toLowerCase().contains(query);
+      final nameKnMatches = tanga.nameKn.toLowerCase().contains(query);
+      final phoneMatches = tanga.contactNumber.contains(query);
+      return nameEnMatches || nameKnMatches || phoneMatches;
+    }).toList();
+  }
+
   /// Backward-compatible adapter for generic DiscoverItem if needed.
   Future<List<DiscoverItem>> getItemsByCategory(
     DiscoverCategory category,
   ) async {
     return const [];
   }
+
+  /// Canonical dataset record counts
+  int get hotelsCount => _hotels.length;
+  int get bazaarsCount => _bazaars.length;
+  int get craftsCount => _crafts.length;
+  int get cuisinesCount => _cuisines.length;
+  int get guidesCount => _guides.length;
+  int get tangaRidesCount => _tangaRides.length;
 }

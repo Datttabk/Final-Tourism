@@ -292,6 +292,9 @@ class AppLocalizationsTe extends AppLocalizations {
   String get touristGuides => 'టూరిస్ట్ గైడ్లు';
 
   @override
+  String get tangaRides => 'టాంగా సవారీలు';
+
+  @override
   String get searchHotels => 'హోటల్ పేరు లేదా స్థానాన్ని శోధించండి...';
 
   @override
@@ -302,6 +305,9 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get searchGuides => 'గైడ్ పేరు లేదా భాషను శోధించండి...';
+
+  @override
+  String get searchTanga => 'టాంగా రైడ్‌లను శోధించండి...';
 
   @override
   String get googleMaps => 'గూగుల్ మ్యాప్స్';

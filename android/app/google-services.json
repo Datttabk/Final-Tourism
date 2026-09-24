@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "295311273500",
+    "project_id": "vijayapura-tourism-40f3b",
+    "storage_bucket": "vijayapura-tourism-40f3b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295311273500:android:095ab1a716f2f599f739d9",
+        "android_client_info": {
+          "package_name": "com.vijayapura.tourism.vijayapura_tourism"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295311273500-lg92f60cbq7vai2ke9jv168p5ol277na.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIvFuYE1QQToyWj_Su6T5_m9l30ZT71_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295311273500-lg92f60cbq7vai2ke9jv168p5ol277na.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "295311273500-sg9hv53f6d1imk3cddb1gmfa7msvdrnh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vijayapura.tourism.vijayapuraTourism"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

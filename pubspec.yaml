@@ -72,6 +72,7 @@ flutter:
     - assets/images/branding/
     - assets/images/monuments/
     - assets/images/explore/
+    - assets/images/discover/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

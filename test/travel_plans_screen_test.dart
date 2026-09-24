@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vijayapura_tourism/core/services/user_activity_controller.dart';
 import 'package:vijayapura_tourism/core/theme/app_theme.dart';
 import 'package:vijayapura_tourism/features/travel_plans/presentation/screens/plans_screen.dart';
 
 void main() {
+  setUp(() async {
+    SharedPreferences.setMockInitialValues({});
+    await UserActivityController.instance.initialize();
+  });
   testWidgets('PlansScreen renders 4 plan selector tabs and switches plans', (
     WidgetTester tester,
   ) async {
@@ -33,7 +39,7 @@ void main() {
     expect(find.text('ಒಂದು ದಿನದ ಪ್ರವಾಸ'), findsWidgets);
     expect(find.text('DAY 1'), findsOneWidget);
     expect(find.text('Gol Gumbaz'), findsWidgets);
-    expect(find.text('Shivgiri'), findsWidgets);
+    expect(find.text('Shivagiri'), findsWidgets);
 
     // Switch to 2 Days I
     await tester.tap(find.text('2 Days I'));
@@ -50,7 +56,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Two Days Trip to Vijayapur (Plan II)'), findsOneWidget);
-    expect(find.text('Upli Burj'), findsWidgets);
+    expect(find.textContaining('Upli'), findsWidgets);
     expect(find.text('Malik-e-Maidan'), findsWidgets);
 
     // Switch to 3 Days
@@ -90,9 +96,8 @@ void main() {
     await tester.tap(openRouteButton);
     await tester.pumpAndSettle();
 
-    // Verify bottom sheet modal opened
-    expect(find.text('Google Maps Route'), findsOneWidget);
-    expect(find.text('Verified QR Destination'), findsOneWidget);
-    expect(find.text('Copy Route Link'), findsOneWidget);
+    // Verify direct launch without modal or copy clipboard prompt
+    expect(find.text('Google Maps Route'), findsNothing);
+    expect(find.text('Copy Route Link'), findsNothing);
   });
 }

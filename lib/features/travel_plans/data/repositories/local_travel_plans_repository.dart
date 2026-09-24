@@ -57,7 +57,7 @@ class LocalTravelPlansRepository implements TravelPlansRepository {
       variantLabel: '1 Day',
       recommendedStartHour: '08:30 AM',
       estimatedDuration: 'Full Day (~9-10 Hours)',
-      routeReferenceAsset: 'assets/routes/one_day/one_day_trip_route.png',
+      routeReferenceAsset: 'assets/routes/one_day/one_day_vijayapura_route.png',
       qrNavigationUrl: 'https://maps.app.goo.gl/ADttaJMz2fSZSbH96',
       highlights: [
         'World-renowned acoustic Whispering Gallery at Gol Gumbaz',
@@ -190,7 +190,7 @@ class LocalTravelPlansRepository implements TravelPlansRepository {
       recommendedStartHour: '09:00 AM',
       estimatedDuration: '2 Full Days',
       routeReferenceAsset:
-          'assets/routes/two_day_plan_1/two_days_trip_plan_1_route.png',
+          'assets/routes/two_day_plan_1/two_day_vijayapura_plan_i_route.png',
       qrNavigationUrl: 'https://maps.app.goo.gl/C9cfuaJjkjesZTnS9',
       highlights: [
         'Deep exploration of the Citadel: Gagan Mahal, Jal Mahal & Narasimha Temple',
@@ -428,7 +428,7 @@ class LocalTravelPlansRepository implements TravelPlansRepository {
       recommendedStartHour: '09:00 AM',
       estimatedDuration: '2 Full Days',
       routeReferenceAsset:
-          'assets/routes/two_day_plan_2/two_days_trip_plan_2_route.png',
+          'assets/routes/two_day_plan_2/two_day_vijayapura_plan_ii_route.png',
       qrNavigationUrl: 'https://maps.app.goo.gl/EeVT2pufRrybWff68',
       highlights: [
         'Panoramic city lookout from the 80-foot stone watchtower of Upli Burj',
@@ -642,7 +642,29 @@ class LocalTravelPlansRepository implements TravelPlansRepository {
     final sangeetMahal = p['sangeet_mahal']!;
     final torviNarasimhaTemple = p['torvi_narasimha_temple']!;
 
-    final navraspurMosque = p['navraspur_ainapur_mosque']!;
+    final navraspurMosque =
+        p['navraspur_ainapur_mosque'] ??
+        const Place(
+          id: 'navraspur_ainapur_mosque',
+          name: 'Navraspur / Ainapur Mosque',
+          category: 'Mosques & Palaces',
+          shortDescription:
+              'Adil Shahi stone mosque with graceful arches and vaulted bays.',
+          historicalOverview: 'Constructed during the high Adil Shahi period, this stone mosque served the thriving satellite royal township of Navraspur/Ainapur. It features refined Deccan stonework, geometric arches, and ornamental bracket mouldings.',
+          imageUrl: '',
+          galleryUrls: [],
+          locationName: 'Ainapur / Navraspur Corridor',
+          coordinates: GeoCoordinates(latitude: 16.8242, longitude: 75.7582),
+          openingTime: '06:00 AM',
+          closingTime: '06:30 PM',
+          gateClosingTime: null,
+          ticketPriceInfo: 'Free Entry',
+          suggestedDuration: '30 Minutes',
+          nearbyAttractionNames: ['Ainapur Tomb', 'Jahan Begum Tomb'],
+          nearbyFoodRecommendations: ['Ainapur Local Tea Stall'],
+          nearbyAccommodationRecommendations: ['Hotel Kanishka International'],
+          mapsUrl: 'https://www.google.com/maps/place/?q=place_id:ChIJK-7oHPb-xjsRKwXScvcDu6w&utm_source=gemini&authuser=1',
+        );
     final ainapurTomb = p['ainapur_tomb']!;
     final jahanBegumTomb = p['jahan_begum_tomb']!;
     final kumatagi = p['kumatagi']!;
@@ -657,7 +679,8 @@ class LocalTravelPlansRepository implements TravelPlansRepository {
       variantLabel: '3 Days',
       recommendedStartHour: '09:00 AM',
       estimatedDuration: '3 Full Days',
-      routeReferenceAsset: 'assets/routes/three_day/three_days_trip_route.png',
+      routeReferenceAsset:
+          'assets/routes/three_day/three_day_vijayapura_route.png',
       qrNavigationUrl: 'https://maps.app.goo.gl/jeHeo2p4YnJQ7jQZ6',
       highlights: [
         'Complete chronological journey through Adil Shahi royal architecture',
