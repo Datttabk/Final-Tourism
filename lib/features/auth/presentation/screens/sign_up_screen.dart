@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/localization/l10n_extensions.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../widgets/auth_header_logos.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -116,16 +117,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Center(
-                      child: Image.asset(
-                        'assets/images/branding/karnataka_tourism_logo.png',
-                        height: 48,
-                        fit: BoxFit.contain,
-                        errorBuilder: (context, error, stackTrace) =>
-                            const SizedBox.shrink(),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
+                    const AuthHeaderLogos(),
                     Text(
                       l10n.createAccount,
                       style: AppTextStyles.headline,

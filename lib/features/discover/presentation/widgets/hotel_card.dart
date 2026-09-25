@@ -613,6 +613,8 @@ class HotelCard extends StatelessWidget {
                       onPressed: () {
                         if (onNavigate != null) {
                           onNavigate!();
+                        } else if (hotel.hasValidMapsUrl) {
+                          UrlLauncherHelper.openUrl(hotel.mapsUrl!);
                         } else {
                           _showNavigationHandoff(context);
                         }

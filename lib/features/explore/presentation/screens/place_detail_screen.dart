@@ -570,7 +570,8 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
                         _InfoRow(
                           icon: Icons.schedule,
                           title: l10n.timings,
-                          detail: (place.visitingTimings != null &&
+                          detail:
+                              (place.visitingTimings != null &&
                                   place.visitingTimings!.isNotEmpty)
                               ? place.visitingTimings!
                               : '${place.openingTime} – ${place.closingTime}',
@@ -798,10 +799,9 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
                     const SizedBox(height: 24),
                   ],
 
-                  // Nearby Food & Stays Recommendations
-                  if (place.nearbyFoodRecommendations.isNotEmpty ||
-                      place.nearbyAccommodationRecommendations.isNotEmpty) ...[
-                    Text(l10n.nearbyFood, style: AppTextStyles.title),
+                  // Nearby Stays Recommendations
+                  if (place.nearbyAccommodationRecommendations.isNotEmpty) ...[
+                    Text(l10n.nearbyStays, style: AppTextStyles.title),
                     const SizedBox(height: 10),
                     Container(
                       padding: const EdgeInsets.all(14),
@@ -813,58 +813,29 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          if (place.nearbyFoodRecommendations.isNotEmpty) ...[
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.restaurant,
-                                  size: 16,
-                                  color: AppColors.accentGold,
-                                ),
-                                const SizedBox(width: 6),
-                                Text(
-                                  'Local Food Hints',
-                                  style: AppTextStyles.label.copyWith(
-                                    color: AppColors.primaryDark,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              place.nearbyFoodRecommendations.join(' • '),
-                              style: AppTextStyles.bodySecondary,
-                            ),
-                          ],
-                          if (place
-                              .nearbyAccommodationRecommendations
-                              .isNotEmpty) ...[
-                            if (place.nearbyFoodRecommendations.isNotEmpty)
-                              const Divider(height: 18),
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.hotel,
-                                  size: 16,
-                                  color: AppColors.primary,
-                                ),
-                                const SizedBox(width: 6),
-                                Text(
-                                  l10n.nearbyStays,
-                                  style: AppTextStyles.label.copyWith(
-                                    color: AppColors.primaryDark,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              place.nearbyAccommodationRecommendations.join(
-                                ' • ',
+                          Row(
+                            children: [
+                              const Icon(
+                                Icons.hotel,
+                                size: 16,
+                                color: AppColors.primary,
                               ),
-                              style: AppTextStyles.bodySecondary,
+                              const SizedBox(width: 6),
+                              Text(
+                                l10n.nearbyStays,
+                                style: AppTextStyles.label.copyWith(
+                                  color: AppColors.primaryDark,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            place.nearbyAccommodationRecommendations.join(
+                              ' • ',
                             ),
-                          ],
+                            style: AppTextStyles.bodySecondary,
+                          ),
                         ],
                       ),
                     ),

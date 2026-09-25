@@ -257,6 +257,22 @@ void main() {
       },
     );
 
+    testWidgets(
+      'PlaceDetailScreen does NOT display Nearby Food or Local Food Hints in Explore UI',
+      (tester) async {
+        final place = await repository.getPlaceById('gol_gumbaz');
+        expect(place, isNotNull);
+
+        await tester.pumpWidget(
+          MaterialApp(home: PlaceDetailScreen(place: place!)),
+        );
+        await tester.pumpAndSettle();
+
+        expect(find.text('Nearby Food'), findsNothing);
+        expect(find.text('Local Food Hints'), findsNothing);
+      },
+    );
+
     test('All 15 coordinate-only destinations now have verified destination place links', () async {
       final baraKaman = await repository.getPlaceById('bara_kaman');
       expect(

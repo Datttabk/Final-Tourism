@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/localization/l10n_extensions.dart';
-import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../widgets/auth_header_logos.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -111,20 +111,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Center(
-                      child: Image.asset(
-                        'assets/images/branding/karnataka_tourism_logo.png',
-                        height: 52,
-                        fit: BoxFit.contain,
-                        errorBuilder: (context, error, stackTrace) =>
-                            const Icon(
-                              Icons.account_balance,
-                              size: 52,
-                              color: AppColors.primary,
-                            ),
-                      ),
-                    ),
-                    const SizedBox(height: 24),
+                    const AuthHeaderLogos(),
                     Text(
                       l10n.welcomeBack,
                       style: AppTextStyles.display,

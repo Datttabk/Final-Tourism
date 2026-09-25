@@ -13,8 +13,7 @@ class AboutVijayapuraScreen extends StatelessWidget {
       'https://www.instagram.com/vijayapura.tourism/';
   static const String facebookUrl =
       'https://www.facebook.com/profile.php?id=100011590277981';
-  static const String youtubeUrl =
-      'https://www.youtube.com/@VijayapuraTourism';
+  static const String youtubeUrl = 'https://www.youtube.com/@VijayapuraTourism';
 
   @override
   Widget build(BuildContext context) {
@@ -124,8 +123,7 @@ class AboutVijayapuraScreen extends StatelessWidget {
           const SizedBox(height: 12),
           _buildContributorCard(
             name: 'Dr. Anandh K',
-            title:
-                'Deputy Commissioner and Chairman District Tourism Development Committee Vijayapura',
+            title: 'Deputy Commissioner and Chairman District Tourism Development Committee Vijayapura',
             icon: Icons.account_balance_rounded,
           ),
           const SizedBox(height: 10),
@@ -136,9 +134,14 @@ class AboutVijayapuraScreen extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           _buildContributorCard(
+            name: 'Dr. Manjunatha P',
+            title: "Principal, BLDEA's Vachana Pitamaha Dr. P. G. Halakatti College of Engineering and Technology",
+            icon: Icons.school_rounded,
+          ),
+          const SizedBox(height: 10),
+          _buildContributorCard(
             name: 'Dr. Sumangala Biradar',
-            title:
-                "HOD,CSE(AI&ML), BLDEA's V P Dr PG Halakatti College of Engineering & Technology",
+            title: "HOD,CSE(AI&ML), BLDEA's V P Dr PG Halakatti College of Engineering & Technology",
             icon: Icons.school_rounded,
           ),
           const SizedBox(height: 24),
@@ -165,13 +168,25 @@ class AboutVijayapuraScreen extends StatelessWidget {
             ),
             child: Column(
               children: [
-                _buildDeveloperRow('Datta Kambagi'),
+                _buildDeveloperRow(
+                  'Datta Kambagi',
+                  'https://www.linkedin.com/in/datta-kambagi-5a4a57294/',
+                ),
                 const Divider(height: 16),
-                _buildDeveloperRow('Yaris Nadaf'),
+                _buildDeveloperRow(
+                  'Yaris Nadaf',
+                  'https://www.linkedin.com/in/yaris-nadaf-3128a7382?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+                ),
                 const Divider(height: 16),
-                _buildDeveloperRow('Ishwar Shatgar'),
+                _buildDeveloperRow(
+                  'Ishwar Shatagar',
+                  'https://www.linkedin.com/in/ishwar-shatagar-36798528b/',
+                ),
                 const Divider(height: 16),
-                _buildDeveloperRow('Darshan Wali'),
+                _buildDeveloperRow(
+                  'Darshan Wali',
+                  'https://www.linkedin.com/in/darshan-wali-217818352',
+                ),
               ],
             ),
           ),
@@ -276,32 +291,72 @@ class AboutVijayapuraScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildDeveloperRow(String name) {
-    return Row(
-      children: [
-        Container(
-          width: 32,
-          height: 32,
-          decoration: BoxDecoration(
-            color: AppColors.surfaceVariant,
-            shape: BoxShape.circle,
-            border: Border.all(color: AppColors.border),
-          ),
-          child: const Center(
-            child: Icon(Icons.code_rounded, size: 16, color: AppColors.primary),
-          ),
-        ),
-        const SizedBox(width: 12),
-        Expanded(
-          child: Text(
-            name,
-            style: AppTextStyles.label.copyWith(
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
+  Widget _buildDeveloperRow(String name, String linkedInUrl) {
+    return InkWell(
+      onTap: () => UrlLauncherHelper.openUrl(linkedInUrl),
+      borderRadius: BorderRadius.circular(10),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 2),
+        child: Row(
+          children: [
+            Container(
+              width: 32,
+              height: 32,
+              decoration: BoxDecoration(
+                color: AppColors.surfaceVariant,
+                shape: BoxShape.circle,
+                border: Border.all(color: AppColors.border),
+              ),
+              child: const Center(
+                child: Icon(
+                  Icons.code_rounded,
+                  size: 16,
+                  color: AppColors.primary,
+                ),
+              ),
             ),
-          ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Text(
+                name,
+                style: AppTextStyles.label.copyWith(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              decoration: BoxDecoration(
+                color: const Color(0xFF0A66C2).withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: const Color(0xFF0A66C2).withValues(alpha: 0.25),
+                ),
+              ),
+              child: const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.open_in_new_rounded,
+                    size: 13,
+                    color: Color(0xFF0A66C2),
+                  ),
+                  SizedBox(width: 5),
+                  Text(
+                    'LinkedIn',
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF0A66C2),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/localization/l10n_extensions.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../data/repositories/local_safety_repository.dart';
@@ -43,7 +44,7 @@ class _SafetyScreenState extends State<SafetyScreen> {
           children: [
             const Icon(Icons.phone_forwarded, color: AppColors.primary),
             const SizedBox(width: 8),
-            const Text('Emergency Call', style: AppTextStyles.title),
+            Text(context.l10n.emergencyAssistance, style: AppTextStyles.title),
           ],
         ),
         content: Column(
@@ -72,7 +73,7 @@ class _SafetyScreenState extends State<SafetyScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text(context.l10n.cancel),
           ),
           FilledButton.icon(
             onPressed: () {
@@ -87,7 +88,7 @@ class _SafetyScreenState extends State<SafetyScreen> {
               );
             },
             icon: const Icon(Icons.call, size: 16),
-            label: const Text('Dial Now'),
+            label: Text(context.l10n.dialNow),
           ),
         ],
       ),
@@ -120,9 +121,9 @@ class _SafetyScreenState extends State<SafetyScreen> {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Safety & Emergency', style: AppTextStyles.headline),
+            Text(context.l10n.safetyTitle, style: AppTextStyles.headline),
             Text(
-              'Emergency services & traveler assistance in Vijayapura',
+              context.l10n.safetySubtitle,
               style: AppTextStyles.bodySecondary.copyWith(fontSize: 12),
             ),
           ],
@@ -260,7 +261,10 @@ class _SafetyScreenState extends State<SafetyScreen> {
                 const SizedBox(height: 24),
 
                 // Traveler Safety Guidelines
-                const Text('Traveler Safety Tips', style: AppTextStyles.title),
+                Text(
+                  context.l10n.emergencyGuidelines,
+                  style: AppTextStyles.title,
+                ),
                 const SizedBox(height: 10),
                 ..._guidelines.map(
                   (guideline) => _GuidelineCard(guideline: guideline),
